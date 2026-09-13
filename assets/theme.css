@@ -164,8 +164,6 @@ section[id] { scroll-margin-top: 90px; }
   letter-spacing: .08em;
   font-weight: 500;
   white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
 }
 .logo-dk {
   font-family: var(--font-sans);
@@ -366,7 +364,6 @@ section[id] { scroll-margin-top: 90px; }
 .product-card-info { padding-top: 1rem; }
 .product-category { font-size: .68rem; letter-spacing: .1em; color: var(--color-warm-grey); text-transform: uppercase; }
 .product-name { font-size: 1.15rem; margin-top: .35rem; font-weight: 400; }
-.product-name a:hover { text-decoration: underline; }
 .product-desc { font-size: .88rem; color: var(--color-warm-grey); margin-top: .4rem; line-height: 1.5; }
 .product-price { margin-top: .6rem; font-size: .92rem; }
 
@@ -543,7 +540,7 @@ section[id] { scroll-margin-top: 90px; }
 }
 .search-result-item img { width: 56px; height: 64px; object-fit: cover; flex-shrink: 0; }
 .search-result-name { font-size: 1rem; }
-.search-result-price { font-size: .82rem; color: var(--color-warm-grey); margin-top: .25rem; display: block; }
+.search-result-price { font-size: .82rem; color: var(--color-warm-grey); margin-top: .25rem; }
 .search-empty { padding: 1.5rem 0; color: var(--color-warm-grey); font-size: .9rem; }
 
 .search-page-form { display: flex; gap: .75rem; margin-bottom: 3rem; max-width: 520px; margin-left: auto; margin-right: auto; }
@@ -588,7 +585,6 @@ section[id] { scroll-margin-top: 90px; }
 .cart-item-img { width: 74px; height: 90px; object-fit: cover; flex-shrink: 0; background: var(--color-cream); }
 .cart-item-details { flex: 1; display: flex; flex-direction: column; }
 .cart-item-name { font-size: .92rem; }
-.cart-item-name:hover { text-decoration: underline; }
 .cart-item-variant { font-size: .74rem; color: var(--color-warm-grey); text-transform: uppercase; letter-spacing: .04em; margin-top: .2rem; }
 .cart-item-row { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: .6rem; gap: 1rem; }
 .cart-item-qty { display: flex; align-items: center; border: 1px solid var(--color-line); }
@@ -651,12 +647,7 @@ section[id] { scroll-margin-top: 90px; }
 .modal-quantity { margin-top: 1.75rem; }
 .qty-stepper { display: inline-flex; align-items: center; border: 1px solid var(--color-line); }
 .qty-stepper button { width: 40px; height: 40px; background: none; border: none; cursor: pointer; font-size: 1.1rem; }
-.qty-stepper input {
-  width: 44px; height: 40px; text-align: center; border: none; background: none; font-size: .95rem;
-  -moz-appearance: textfield;
-}
-.qty-stepper input::-webkit-outer-spin-button,
-.qty-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qty-stepper span { width: 36px; text-align: center; font-size: .95rem; }
 
 .modal-info .btn-block { margin-top: 1.75rem; }
 

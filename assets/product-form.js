@@ -87,14 +87,19 @@
 
   /* ---------------------------- Antal ---------------------------- */
   const qtyInput = qs('#productQtyInput');
+  const qtyValue = qs('#productQtyValue');
   const qtyMinus = qs('#productQtyMinus');
   const qtyPlus = qs('#productQtyPlus');
-  if (qtyInput && qtyMinus && qtyPlus) {
+  if (qtyInput && qtyValue && qtyMinus && qtyPlus) {
     qtyMinus.addEventListener('click', () => {
-      qtyInput.value = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
+      const next = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
+      qtyInput.value = next;
+      qtyValue.textContent = String(next);
     });
     qtyPlus.addEventListener('click', () => {
-      qtyInput.value = (parseInt(qtyInput.value, 10) || 1) + 1;
+      const next = (parseInt(qtyInput.value, 10) || 1) + 1;
+      qtyInput.value = next;
+      qtyValue.textContent = String(next);
     });
   }
 

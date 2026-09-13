@@ -96,7 +96,8 @@
           <p class="modal-label">{{ 'products.product.quantity' | t }}</p>
           <div class="qty-stepper">
             <button type="button" id="productQtyMinus" aria-label="{{ 'general.cart.decrease_quantity' | t }}">−</button>
-            <input type="number" name="quantity" id="productQtyInput" value="1" min="1" inputmode="numeric">
+            <span id="productQtyValue" aria-live="polite">1</span>
+            <input type="hidden" name="quantity" id="productQtyInput" value="1">
             <button type="button" id="productQtyPlus" aria-label="{{ 'general.cart.increase_quantity' | t }}">+</button>
           </div>
         </div>
