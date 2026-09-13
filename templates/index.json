@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify://shop_images/hero.jpg",
         "heading": "Bliv bedre til\nat være søvnig.",
         "subheading": "Produkter til søvn, komfort og din aftenrutine — samlet ét sted.",
         "button_1_text": "Shop Søvnig",
@@ -20,21 +30,59 @@
     },
     "featured_products": {
       "type": "featured-products",
+      "blocks": {
+        "p1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "badge_text": "Søvnig favorit",
+            "title_override": "",
+            "description_override": ""
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "badge_text": "",
+            "title_override": "",
+            "description_override": ""
+          }
+        },
+        "p3": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "badge_text": "",
+            "title_override": "",
+            "description_override": ""
+          }
+        },
+        "p4": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "badge_text": "",
+            "title_override": "",
+            "description_override": ""
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
       "settings": {
         "heading": "Søvnig-udvalget",
         "subheading": "Alt til en bedre nat og en god aftenrutine."
-      },
-      "blocks": {
-        "p1": { "type": "product", "settings": { "product": "", "badge_text": "Søvnig favorit" } },
-        "p2": { "type": "product", "settings": { "product": "" } },
-        "p3": { "type": "product", "settings": { "product": "" } },
-        "p4": { "type": "product", "settings": { "product": "" } }
-      },
-      "block_order": ["p1", "p2", "p3", "p4"]
+      }
     },
     "editorial": {
       "type": "editorial",
       "settings": {
+        "image": "shopify://shop_images/editorial.jpg",
         "heading": "Din aftenrutine\nstarter her.",
         "link_text": "Se vores tilgang",
         "link_url": "#om-soevnig"
@@ -43,54 +91,145 @@
     "principles": {
       "type": "principles",
       "blocks": {
-        "pr1": { "type": "principle", "settings": { "heading": "Komfort", "text": "Følelsen af at synke ned i en god seng." } },
-        "pr2": { "type": "principle", "settings": { "heading": "Mørke", "text": "Mindre lys. Færre forstyrrelser." } },
-        "pr3": { "type": "principle", "settings": { "heading": "Ro", "text": "Produkter designet til at gøre sengetid til en rar rutine." } }
+        "pr1": {
+          "type": "principle",
+          "settings": {
+            "heading": "Komfort",
+            "text": "Følelsen af at synke ned i en god seng."
+          }
+        },
+        "pr2": {
+          "type": "principle",
+          "settings": {
+            "heading": "Mørke",
+            "text": "Mindre lys. Færre forstyrrelser."
+          }
+        },
+        "pr3": {
+          "type": "principle",
+          "settings": {
+            "heading": "Ro",
+            "text": "Produkter designet til at gøre sengetid til en rar rutine."
+          }
+        }
       },
-      "block_order": ["pr1", "pr2", "pr3"]
+      "block_order": [
+        "pr1",
+        "pr2",
+        "pr3"
+      ],
+      "settings": {}
     },
     "featured_product": {
       "type": "featured-product",
+      "blocks": {
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "text": "Premium komfort"
+          }
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {
+            "text": "Tilpasset følelse"
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "text": "Åndbare materialer"
+          }
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {
+            "text": "30 nætters prøveperiode"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
       "settings": {
+        "product": "",
         "eyebrow": "Søvnig Puden",
         "heading": "Mød puden, der gør sengen svær at forlade.",
         "text": "Blød, hvor du vil have den. Support, hvor du har brug for den. Designet til at give dig følelsen af en god hotelseng, hjemme hos dig selv.",
         "button_text": "Se Søvnig Puden"
-      },
-      "blocks": {
-        "u1": { "type": "usp", "settings": { "text": "Premium komfort" } },
-        "u2": { "type": "usp", "settings": { "text": "Tilpasset følelse" } },
-        "u3": { "type": "usp", "settings": { "text": "Åndbare materialer" } },
-        "u4": { "type": "usp", "settings": { "text": "30 nætters prøveperiode" } }
-      },
-      "block_order": ["u1", "u2", "u3", "u4"]
+      }
     },
     "reviews": {
       "type": "reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "quote": "Det føles rigtig rart at have en blødere aftenrutine.",
+            "author": "Emma, København"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "quote": "Sovemasken er blevet en fast del af min aften.",
+            "author": "Oliver, Aarhus"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "quote": "Puden er den bedste investering, jeg har gjort i min søvn.",
+            "author": "Clara, København"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
       "settings": {
         "heading": "Hvad folk siger",
         "demo_label": "Demo-anmeldelser — kun til prototypeformål, ikke rigtige kundeanmeldelser."
-      },
-      "blocks": {
-        "r1": { "type": "review", "settings": { "quote": "Det føles rigtig rart at have en blødere aftenrutine.", "author": "Emma, København" } },
-        "r2": { "type": "review", "settings": { "quote": "Sovemasken er blevet en fast del af min aften.", "author": "Oliver, Aarhus" } },
-        "r3": { "type": "review", "settings": { "quote": "Puden er den bedste investering, jeg har gjort i min søvn.", "author": "Clara, København" } }
-      },
-      "block_order": ["r1", "r2", "r3"]
+      }
     },
     "bundle": {
       "type": "bundle-promo",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "text": "Søvnig Puden"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "text": "Søvnig Sovemasken"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "text": "Søvnig Næsestrips"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
       "settings": {
+        "product": "",
         "eyebrow": "Den komplette aftenrutine",
         "heading": "Alt, hvad du behøver, i ét sæt.",
         "button_text": "Få sættet"
-      },
-      "blocks": {
-        "b1": { "type": "item", "settings": { "text": "Søvnig Puden" } },
-        "b2": { "type": "item", "settings": { "text": "Søvnig Sovemasken" } },
-        "b3": { "type": "item", "settings": { "text": "Søvnig Næsestrips" } }
-      },
-      "block_order": ["b1", "b2", "b3"]
+      }
     },
     "newsletter": {
       "type": "newsletter",
