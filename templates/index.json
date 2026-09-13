@@ -34,7 +34,7 @@
         "p1": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-puden",
             "badge_text": "Søvnig favorit",
             "title_override": "",
             "description_override": ""
@@ -43,7 +43,7 @@
         "p2": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-naesestrips",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
@@ -52,7 +52,7 @@
         "p3": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-sovemasken",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
@@ -61,7 +61,7 @@
         "p4": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-saettet",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
