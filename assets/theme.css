@@ -481,7 +481,7 @@ section[id] { scroll-margin-top: 90px; }
   background: var(--color-white); color: var(--color-charcoal);
 }
 .newsletter-form input:focus { outline: 2px solid var(--color-charcoal); outline-offset: 2px; }
-.newsletter-message { margin-top: 1rem; font-size: .85rem; min-height: 1.2em; color: var(--color-dark-brown); width: 100%; text-align: center; }
+.newsletter-message { margin-top: 1rem; font-size: .85rem; min-height: 1.2em; color: var(--color-dark-brown); }
 
 /* ---------------------------- Footer ---------------------------- */
 .site-footer { background: var(--color-cream); padding-top: clamp(3.5rem, 7vw, 5.5rem); }
@@ -685,7 +685,6 @@ section[id] { scroll-margin-top: 90px; }
   .reviews-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
   .newsletter-form { flex-direction: row; }
-  .newsletter-message { text-align: left; }
   .usp-list { grid-template-columns: repeat(2, 1fr); max-width: 420px; }
 }
 

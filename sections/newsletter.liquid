@@ -21,21 +21,22 @@
         value="{{ form.email }}"
         required>
       <button type="submit" class="btn btn-primary">{{ 'general.newsletter.submit' | t | upcase }}</button>
-
-      {%- if form.posted_successfully? -%}
-        <p class="newsletter-message" role="status">{{ 'general.newsletter.success' | t }}</p>
-      {%- elsif form.errors -%}
-        <p class="newsletter-message" role="status">
-          {%- if form.errors.messages['form'] -%}
-            {{ form.errors.messages['form'] }}
-          {%- else -%}
-            {{ 'general.newsletter.error' | t }}
-          {%- endif -%}
-        </p>
-      {%- else -%}
-        <p class="newsletter-message" role="status"></p>
-      {%- endif -%}
+      {%- assign newsletter_success = form.posted_successfully? -%}
+      {%- assign newsletter_errors = form.errors -%}
+      {%- assign newsletter_error_message = form.errors.messages['form'] -%}
     {%- endform -%}
+
+    <p class="newsletter-message" id="newsletterMessage" role="status" aria-live="polite">
+      {%- if newsletter_success -%}
+        {{ 'general.newsletter.success' | t }}
+      {%- elsif newsletter_errors -%}
+        {%- if newsletter_error_message -%}
+          {{ newsletter_error_message }}
+        {%- else -%}
+          {{ 'general.newsletter.error' | t }}
+        {%- endif -%}
+      {%- endif -%}
+    </p>
   </div>
 </section>
 
