@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Bliv bedre til\nat være søvnig.",
+        "subheading": "Produkter til søvn, komfort og din aftenrutine — samlet ét sted.",
+        "button_1_text": "Shop Søvnig",
+        "button_1_link": "#shop",
+        "button_2_text": "Se alle produkter",
+        "button_2_link": "#shop"
+      }
+    },
+    "intro": {
+      "type": "intro",
+      "settings": {
+        "heading": "Små ting kan gøre en stor forskel for din aften.",
+        "text": "<p>Fra sovemasker og næsestrips til puder og andre favoritter. Søvnig samler produkter, der gør det nemmere at skabe din egen gode aftenrutine.</p>"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Søvnig-udvalget",
+        "subheading": "Alt til en bedre nat og en god aftenrutine."
+      },
+      "blocks": {
+        "p1": { "type": "product", "settings": { "product": "", "badge_text": "Søvnig favorit" } },
+        "p2": { "type": "product", "settings": { "product": "" } },
+        "p3": { "type": "product", "settings": { "product": "" } },
+        "p4": { "type": "product", "settings": { "product": "" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4"]
+    },
+    "editorial": {
+      "type": "editorial",
+      "settings": {
+        "heading": "Din aftenrutine\nstarter her.",
+        "link_text": "Se vores tilgang",
+        "link_url": "#om-soevnig"
+      }
+    },
+    "principles": {
+      "type": "principles",
+      "blocks": {
+        "pr1": { "type": "principle", "settings": { "heading": "Komfort", "text": "Følelsen af at synke ned i en god seng." } },
+        "pr2": { "type": "principle", "settings": { "heading": "Mørke", "text": "Mindre lys. Færre forstyrrelser." } },
+        "pr3": { "type": "principle", "settings": { "heading": "Ro", "text": "Produkter designet til at gøre sengetid til en rar rutine." } }
+      },
+      "block_order": ["pr1", "pr2", "pr3"]
+    },
+    "featured_product": {
+      "type": "featured-product",
+      "settings": {
+        "eyebrow": "Søvnig Puden",
+        "heading": "Mød puden, der gør sengen svær at forlade.",
+        "text": "Blød, hvor du vil have den. Support, hvor du har brug for den. Designet til at give dig følelsen af en god hotelseng, hjemme hos dig selv.",
+        "button_text": "Se Søvnig Puden"
+      },
+      "blocks": {
+        "u1": { "type": "usp", "settings": { "text": "Premium komfort" } },
+        "u2": { "type": "usp", "settings": { "text": "Tilpasset følelse" } },
+        "u3": { "type": "usp", "settings": { "text": "Åndbare materialer" } },
+        "u4": { "type": "usp", "settings": { "text": "30 nætters prøveperiode" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Hvad folk siger",
+        "demo_label": "Demo-anmeldelser — kun til prototypeformål, ikke rigtige kundeanmeldelser."
+      },
+      "blocks": {
+        "r1": { "type": "review", "settings": { "quote": "Det føles rigtig rart at have en blødere aftenrutine.", "author": "Emma, København" } },
+        "r2": { "type": "review", "settings": { "quote": "Sovemasken er blevet en fast del af min aften.", "author": "Oliver, Aarhus" } },
+        "r3": { "type": "review", "settings": { "quote": "Puden er den bedste investering, jeg har gjort i min søvn.", "author": "Clara, København" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    },
+    "bundle": {
+      "type": "bundle-promo",
+      "settings": {
+        "eyebrow": "Den komplette aftenrutine",
+        "heading": "Alt, hvad du behøver, i ét sæt.",
+        "button_text": "Få sættet"
+      },
+      "blocks": {
+        "b1": { "type": "item", "settings": { "text": "Søvnig Puden" } },
+        "b2": { "type": "item", "settings": { "text": "Søvnig Sovemasken" } },
+        "b3": { "type": "item", "settings": { "text": "Søvnig Næsestrips" } }
+      },
+      "block_order": ["b1", "b2", "b3"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Små påmindelser om bedre nætter.",
+        "text": "Nye produkter, gode råd og adgang før alle andre."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "featured_products",
+    "editorial",
+    "principles",
+    "featured_product",
+    "reviews",
+    "bundle",
+    "newsletter"
+  ]
+}

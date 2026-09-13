@@ -1,0 +1,61 @@
+{% comment %}
+  Kurv-side (fallback-rute). Bruger native formular-submit i stedet for
+  AJAX, så siden altid virker uafhængigt af JavaScript. Kurv-drawerens
+  AJAX-flow (assets/cart.js) er den primære oplevelse på resten af sitet.
+{% endcomment %}
+
+<section class="bestsellers cart-page">
+  <div class="container narrow">
+    <div class="section-header reveal">
+      <h1>{{ 'general.cart.title' | t | upcase }}</h1>
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      {%- if settings.cart_show_shipping_bar -%}
+        {%- assign threshold_cents = settings.free_shipping_threshold | times: 100 -%}
+        <div class="cart-shipping">
+          <div class="progress-track">
+            <div class="progress-fill" style="width: {% if cart.total_price >= threshold_cents %}100{% else %}{{ cart.total_price | times: 100.0 | divided_by: threshold_cents }}{% endif %}%"></div>
+          </div>
+          <p>
+            {%- if cart.total_price >= threshold_cents -%}
+              {{ 'general.cart.free_shipping_unlocked' | t }}
+            {%- else -%}
+              {%- assign remaining = threshold_cents | minus: cart.total_price -%}
+              {%- assign remaining_formatted = remaining | money_without_trailing_zeros -%}
+              {{ 'general.cart.free_shipping_progress_html' | t: amount: remaining_formatted }}
+            {%- endif -%}
+          </p>
+        </div>
+      {%- endif -%}
+
+      <div class="cart-items cart-items-page">
+        {%- for item in cart.items -%}
+          {% render 'cart-item-page', item: item, item_index: forloop.index0 %}
+        {%- endfor -%}
+      </div>
+
+      <form action="{{ routes.cart_url }}" method="post" id="CartPageForm" class="cart-footer cart-footer-page">
+        <div class="cart-subtotal">
+          <span>{{ 'general.cart.subtotal' | t }}</span>
+          <span>{{ cart.total_price | money_without_trailing_zeros }}</span>
+        </div>
+        <button type="submit" class="btn btn-outline btn-block cart-update-btn">{{ 'general.cart.update' | t | upcase }}</button>
+        <button type="submit" name="checkout" class="btn btn-primary btn-block">{{ 'general.cart.checkout' | t | upcase }}</button>
+        <p class="cart-note">{{ 'general.cart.note' | t }}</p>
+      </form>
+    {%- else -%}
+      <div class="cart-empty cart-empty-page">
+        <p>{{ 'general.cart.empty' | t }}</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn-outline">{{ 'general.cart.continue_shopping' | t | upcase }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kurv-side",
+  "settings": []
+}
+{% endschema %}

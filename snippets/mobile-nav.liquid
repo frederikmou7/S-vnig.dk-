@@ -1,0 +1,21 @@
+{% comment %}
+  Mobil-menu (off-canvas). Kaldes fra sections/header.liquid med:
+  {% render 'mobile-nav', menu: section.settings.menu %}
+{% endcomment %}
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobilnavigation" aria-hidden="true">
+  <button class="modal-close" id="mobileNavClose" aria-label="{{ 'general.menu.close' | t }}">
+    {% render 'icon-close' %}
+  </button>
+  <ul class="mobile-nav-links">
+    {% for link in menu.links %}
+      <li>
+        <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="mobile-nav-footer">
+    <button class="mobile-nav-secondary" id="mobileSearchBtn">{{ 'general.search.search' | t }}</button>
+  </div>
+</nav>

@@ -1,0 +1,21 @@
+{% comment %}
+  Prisvisning med compare-at price. Forventer:
+  - product ELLER (price og compare_at_price direkte)
+  - class: ekstra CSS-klasse på wrapperen (valgfri)
+{% endcomment %}
+
+{%- liquid
+  if product
+    assign price = product.price
+    assign compare_at_price = product.compare_at_price
+  endif
+-%}
+
+<span class="price {{ class }}">
+  {%- if compare_at_price > price -%}
+    <span class="price-current">{{ price | money_without_trailing_zeros }}</span>
+    <span class="price-compare">{{ compare_at_price | money_without_trailing_zeros }}</span>
+  {%- else -%}
+    <span class="price-current">{{ price | money_without_trailing_zeros }}</span>
+  {%- endif -%}
+</span>

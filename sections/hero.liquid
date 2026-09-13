@@ -1,0 +1,81 @@
+<section class="hero" id="top">
+  <div class="hero-media">
+    {%- if section.settings.image -%}
+      <img
+        src="{{ section.settings.image | image_url: width: 2400 }}"
+        alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+        fetchpriority="high"
+        width="2400"
+        height="{{ 2400 | divided_by: section.settings.image.aspect_ratio }}">
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-headline">{{ section.settings.heading | newline_to_br }}</h1>
+    {%- if section.settings.subheading != blank -%}
+      <p class="hero-sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+    <div class="hero-ctas">
+      {%- if section.settings.button_1_text != blank -%}
+        <a href="{{ section.settings.button_1_link | default: '#' }}" class="btn btn-light">{{ section.settings.button_1_text | upcase }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_2_text != blank -%}
+        <a href="{{ section.settings.button_2_link | default: '#' }}" class="btn btn-ghost-light">{{ section.settings.button_2_text | upcase }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Baggrundsbillede"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Overskrift",
+      "info": "Tryk Enter for linjeskift, ligesom i det oprindelige design.",
+      "default": "Bliv bedre til\nat være søvnig."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Undertekst",
+      "default": "Produkter til søvn, komfort og din aftenrutine — samlet ét sted."
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Primær CTA-tekst",
+      "default": "Shop Søvnig"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Primær CTA-link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Sekundær CTA-tekst",
+      "default": "Se alle produkter"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Sekundær CTA-link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

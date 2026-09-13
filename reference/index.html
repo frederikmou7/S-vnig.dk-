@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SØVNIG — Alt til en bedre nat</title>
+<meta name="description" content="Søvnig samler produkter til søvn, komfort og din aftenrutine. Puder, sovemasker, næsestrips og mere — ét sted.">
+
+<!--
+  ============================================================
+  SØVNIG — Prototype v2 (rebrand fra "Hotel Sleep")
+  ============================================================
+  Tidligt koncept-/brandprototype. Produktspecifikationer,
+  materialer, priser på kommende kategorier, anmeldelser og
+  kundetal på denne side er PLACEHOLDERS til demonstration og
+  må ikke opfattes som bekræftede fakta om et færdigt produkt.
+  Ingen backend, database eller betalingsløsning er tilkoblet.
+  Kurven gemmes udelukkende lokalt i browseren (localStorage).
+
+  Produktnote: Indholdet for "Søvnig Sovemasken" og "Søvnig
+  Sættet" var ikke fuldt specificeret i briefen (teksten blev
+  afbrudt midt i produkt 3). Der er derfor skrevet rimeligt
+  placeholder-indhold i samme tone, som bør bekræftes/justeres.
+  ============================================================
+-->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233A3227'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23F5EFE6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Spring til indhold</a>
+
+<!-- ===================== TOP-BAR ===================== -->
+<div class="announcement-bar">
+  <p>Fri fragt ved køb over 799 kr. &nbsp;·&nbsp; 30 dages returret</p>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#top" class="logo">SØVNIG<span class="logo-dk">.dk</span></a>
+
+    <nav class="main-nav" aria-label="Hovednavigation">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#shop">Søvn</a></li>
+        <li><a href="#shop">Tilbehør</a></li>
+        <li><a href="#om-soevnig">Om Søvnig</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" id="searchOpenBtn" aria-label="Søg" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+      </button>
+      <button class="icon-btn cart-toggle" id="cartOpenBtn" aria-label="Åbn kurv" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l-1 13H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBIL-MENU ===================== -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobilnavigation" aria-hidden="true">
+  <button class="modal-close" id="mobileNavClose" aria-label="Luk menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <ul class="mobile-nav-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#shop">Søvn</a></li>
+    <li><a href="#shop">Tilbehør</a></li>
+    <li><a href="#om-soevnig">Om Søvnig</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <button class="mobile-nav-secondary" id="mobileSearchBtn">Søg</button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero-media">
+      <img
+        src="https://images.unsplash.com/photo-1710388663701-8c4aad200795?auto=format&fit=crop&w=2400&q=80"
+        alt="Et roligt, lyst soveværelse med hvidt sengetøj og blødt naturligt lys"
+        fetchpriority="high">
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-headline">Bliv bedre til<br>at være søvnig.</h1>
+      <p class="hero-sub">Produkter til søvn, komfort og din aftenrutine — samlet ét sted.</p>
+      <div class="hero-ctas">
+        <a href="#shop" class="btn btn-light">SHOP SØVNIG</a>
+        <a href="#shop" class="btn btn-ghost-light">SE ALLE PRODUKTER</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KONCEPT-INTRO ===================== -->
+  <section class="brand-statement reveal" id="om-soevnig">
+    <div class="container narrow">
+      <h2>Små ting kan gøre en stor forskel for din aften.</h2>
+      <p>Fra sovemasker og næsestrips til puder og andre favoritter. Søvnig samler produkter, der gør det nemmere at skabe din egen gode aftenrutine.</p>
+    </div>
+  </section>
+
+  <!-- ===================== UDVALGET ===================== -->
+  <section class="bestsellers" id="shop">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Søvnig-udvalget</h2>
+        <p>Alt til en bedre nat og en god aftenrutine.</p>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- Søvnig Puden -->
+        <article class="product-card reveal" data-product-id="puden">
+          <button class="product-card-media" aria-label="Se Søvnig Puden">
+            <span class="badge badge-accent">SØVNIG FAVORIT</span>
+            <img src="https://images.unsplash.com/photo-1628044230700-7fc3fb8d0192?auto=format&fit=crop&w=900&q=80" alt="Søvnig Puden — blød, hvid pude" loading="lazy">
+            <span class="quick-add" data-quick-add="puden">TILFØJ</span>
+          </button>
+          <div class="product-card-info">
+            <p class="product-category">PUDER</p>
+            <h3 class="product-name">Søvnig Puden</h3>
+            <p class="product-desc">Blød komfort inspireret af følelsen fra en god hotelseng.</p>
+            <p class="product-price">799 kr.</p>
+          </div>
+        </article>
+
+        <!-- Søvnig Næsestrips -->
+        <article class="product-card reveal" data-product-id="naesestrips">
+          <button class="product-card-media" aria-label="Se Søvnig Næsestrips">
+            <img src="https://images.unsplash.com/photo-1633857099824-75d9a3c42f77?auto=format&fit=crop&w=900&q=80" alt="Søvnig Næsestrips — minimalistisk pakke med flere strips" loading="lazy">
+            <span class="quick-add" data-quick-add="naesestrips">TILFØJ</span>
+          </button>
+          <div class="product-card-info">
+            <p class="product-category">AFTENRUTINE</p>
+            <h3 class="product-name">Søvnig Næsestrips</h3>
+            <p class="product-desc">En enkel del af din aftenrutine.</p>
+            <p class="product-price">129 kr.</p>
+          </div>
+        </article>
+
+        <!-- Søvnig Sovemasken -->
+        <article class="product-card reveal" data-product-id="sovemasken">
+          <button class="product-card-media" aria-label="Se Søvnig Sovemasken">
+            <img src="https://images.unsplash.com/photo-1666934209818-cd6a6d08bd8d?auto=format&fit=crop&w=900&q=80" alt="Søvnig Sovemasken i blødt, neutralt stof" loading="lazy">
+            <span class="quick-add" data-quick-add="sovemasken">TILFØJ</span>
+          </button>
+          <div class="product-card-info">
+            <p class="product-category">SØVN</p>
+            <h3 class="product-name">Søvnig Sovemasken</h3>
+            <p class="product-desc">Total mørke. Uanset hvor du sover.</p>
+            <p class="product-price">249 kr.</p>
+          </div>
+        </article>
+
+        <!-- Søvnig Sættet -->
+        <article class="product-card reveal" data-product-id="saettet">
+          <button class="product-card-media" aria-label="Se Søvnig Sættet">
+            <span class="badge">SPAR 178 KR.</span>
+            <img src="https://images.unsplash.com/photo-1550328927-3b33885318fa?auto=format&fit=crop&w=900&q=80" alt="Søvnig Sættet — pude, sovemaske og næsestrips" loading="lazy">
+            <span class="quick-add" data-quick-add="saettet">TILFØJ</span>
+          </button>
+          <div class="product-card-info">
+            <p class="product-category">SÆT</p>
+            <h3 class="product-name">Søvnig Sættet</h3>
+            <p class="product-desc">Puden, Sovemasken &amp; Næsestrips.</p>
+            <p class="product-price">999 kr.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDITORIAL ===================== -->
+  <section class="editorial reveal">
+    <img src="https://images.unsplash.com/photo-1652161853855-005106816b9f?auto=format&fit=crop&w=2400&q=80" alt="Roligt, varmt soveværelse i naturlige toner" loading="lazy">
+    <div class="editorial-overlay">
+      <h2>Din aftenrutine<br>starter her.</h2>
+      <a href="#om-soevnig" class="editorial-link">SE VORES TILGANG →</a>
+    </div>
+  </section>
+
+  <!-- ===================== TRE PRINCIPPER ===================== -->
+  <section class="principles">
+    <div class="container">
+      <div class="principles-grid">
+        <div class="principle reveal">
+          <span class="principle-number">01</span>
+          <h3>Komfort</h3>
+          <p>Følelsen af at synke ned i en god seng.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-number">02</span>
+          <h3>Mørke</h3>
+          <p>Mindre lys. Færre forstyrrelser.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-number">03</span>
+          <h3>Ro</h3>
+          <p>Produkter designet til at gøre sengetid til en rar rutine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HERO-PRODUKT: SØVNIG PUDEN ===================== -->
+  <section class="hero-product">
+    <div class="container hero-product-grid">
+      <div class="hero-product-media reveal">
+        <img src="https://images.unsplash.com/photo-1544947892-d6d2af87a2ee?auto=format&fit=crop&w=1600&q=80" alt="Søvnig Puden på hvidt sengetøj" loading="lazy">
+      </div>
+      <div class="hero-product-content reveal">
+        <p class="eyebrow">SØVNIG PUDEN</p>
+        <h2>Mød puden, der gør sengen svær at forlade.</h2>
+        <p class="hero-product-desc">Blød, hvor du vil have den. Support, hvor du har brug for den. Designet til at give dig følelsen af en god hotelseng, hjemme hos dig selv.</p>
+        <p class="hero-product-price">799 kr.</p>
+        <button class="btn btn-primary js-open-product" data-product-id="puden">SE SØVNIG PUDEN</button>
+
+        <!--
+          Prototype-forbehold: USP'erne herunder er foreløbige
+          placeholder-påstande til tidlig konceptpræsentation.
+          De er ikke bekræftede produktspecifikationer og skal
+          bekræftes, når det endelige produkt er testet og valgt.
+        -->
+        <ul class="usp-list" data-placeholder="true">
+          <li>Premium komfort<span class="placeholder-tag">*</span></li>
+          <li>Tilpasset følelse<span class="placeholder-tag">*</span></li>
+          <li>Åndbare materialer<span class="placeholder-tag">*</span></li>
+          <li>30 nætters prøveperiode<span class="placeholder-tag">*</span></li>
+        </ul>
+        <p class="placeholder-note">*Foreløbige produktpåstande — bekræftes ved endelig produktspecifikation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOCIAL PROOF ===================== -->
+  <section class="reviews reveal">
+    <div class="container narrow">
+      <div class="section-header">
+        <h2>Hvad folk siger</h2>
+        <p class="demo-tag">Demo-anmeldelser — kun til prototypeformål, ikke rigtige kundeanmeldelser.</p>
+      </div>
+      <div class="reviews-grid">
+        <blockquote class="review">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <p class="review-quote">"Det føles rigtig rart at have en blødere aftenrutine."</p>
+          <cite>— Emma, København</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <p class="review-quote">"Sovemasken er blevet en fast del af min aften."</p>
+          <cite>— Oliver, Aarhus</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <p class="review-quote">"Puden er den bedste investering, jeg har gjort i min søvn."</p>
+          <cite>— Clara, København</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SÆTTET ===================== -->
+  <section class="bundle">
+    <div class="container bundle-grid">
+      <div class="bundle-media reveal">
+        <img src="https://images.unsplash.com/photo-1630660664869-c9d3cc676880?auto=format&fit=crop&w=2000&q=80" alt="Søvnig Sættet stylet på en seng" loading="lazy">
+      </div>
+      <div class="bundle-content reveal">
+        <p class="eyebrow">DEN KOMPLETTE AFTENRUTINE</p>
+        <h2>Alt, hvad du behøver, i ét sæt.</h2>
+        <ul class="bundle-items">
+          <li>Søvnig Puden</li>
+          <li>Søvnig Sovemasken</li>
+          <li>Søvnig Næsestrips</li>
+        </ul>
+        <div class="bundle-price">
+          <span class="price-compare">1.177 kr.</span>
+          <span class="price-current">999 kr.</span>
+        </div>
+        <button class="btn btn-primary" id="bundleAddBtn" data-product-id="saettet">FÅ SÆTTET</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NYHEDSBREV ===================== -->
+  <section class="newsletter reveal">
+    <div class="container narrow">
+      <h2>Små påmindelser om bedre nætter.</h2>
+      <p>Nye produkter, gode råd og adgang før alle andre.</p>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <label for="newsletterEmail" class="sr-only">E-mailadresse</label>
+        <input type="email" id="newsletterEmail" placeholder="Din e-mailadresse" required autocomplete="email">
+        <button type="submit" class="btn btn-primary">TILMELD DIG SØVNIG</button>
+      </form>
+      <p class="newsletter-message" id="newsletterMessage" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="footer-logo">SØVNIG</p>
+      <p class="footer-tagline">Alt til en bedre nat.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>SHOP</h4>
+      <ul>
+        <li><a href="#shop">Puder</a></li>
+        <li><a href="#shop">Sovemasker</a></li>
+        <li><a href="#shop">Tilbehør</a></li>
+        <li><a href="#shop">Sæt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>OM SØVNIG</h4>
+      <ul>
+        <li><a href="#om-soevnig">Vores historie</a></li>
+        <li><a href="#om-soevnig">Søvnfilosofi</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="Journalen er ikke tilgængelig i denne prototype endnu.">Journal</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HJÆLP</h4>
+      <ul>
+        <li><a href="#" class="js-stub" data-stub-message="Fragtinformation tilføjes, når de endelige leveringsaftaler er på plads.">Fragt</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="Returinformation er ikke tilgængelig i denne prototype endnu.">Retur</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="FAQ er ikke tilgængelig i denne prototype endnu.">FAQ</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="Kontaktside er ikke tilgængelig i denne prototype endnu.">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>SOCIALE MEDIER</h4>
+      <ul>
+        <li><a href="#" class="js-stub" data-stub-message="Sociale medier er ikke forbundet i denne prototype.">Instagram</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="Sociale medier er ikke forbundet i denne prototype.">TikTok</a></li>
+        <li><a href="#" class="js-stub" data-stub-message="Sociale medier er ikke forbundet i denne prototype.">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SØG ===================== -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Søg efter produkter" aria-hidden="true">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+    <input type="text" id="searchInput" placeholder="Søg efter puder, sovemasker, tilbehør…" aria-label="Søg efter produkter" autocomplete="off">
+    <button class="modal-close" id="searchCloseBtn" aria-label="Luk søgning">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ===================== KURV ===================== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Din kurv" aria-hidden="true">
+  <div class="cart-header">
+    <h2>DIN KURV <span id="cartHeaderCount">(0)</span></h2>
+    <button class="modal-close" id="cartCloseBtn" aria-label="Luk kurv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-shipping">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <p id="shippingMessage">Tilføj 799 kr. for fri fragt.</p>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-empty" id="cartEmpty" hidden>
+    <p>Din kurv er tom.</p>
+    <button class="btn btn-outline" id="cartEmptyShopBtn">FORTSÆT SHOPPING</button>
+  </div>
+
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">0 kr.</span>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">TIL KASSEN</button>
+    <p class="cart-note">Fragt og moms beregnes ved checkout. Checkout er ikke tilkoblet i denne prototype.</p>
+  </div>
+</aside>
+
+<!-- ===================== PRODUKTMODAL ===================== -->
+<div class="modal-overlay" id="modalOverlay"></div>
+<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName" aria-hidden="true">
+  <div class="product-modal-inner">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Luk produktvisning">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+
+    <div class="modal-gallery">
+      <div class="modal-main-image">
+        <img id="modalMainImage" src="" alt="">
+      </div>
+      <div class="modal-thumbs" id="modalThumbs"></div>
+    </div>
+
+    <div class="modal-info">
+      <p class="product-category" id="modalCategory"></p>
+      <h2 id="modalProductName"></h2>
+      <div class="modal-rating" id="modalRating" hidden>
+        <span aria-hidden="true">★★★★★</span> <span id="modalRatingValue"></span> <span class="demo-tag-inline">(Demo-vurdering)</span>
+      </div>
+      <p class="modal-price" id="modalPrice"></p>
+      <p class="modal-description" id="modalDescription"></p>
+
+      <div class="modal-variants" id="modalVariants" hidden>
+        <p class="modal-label">Størrelse</p>
+        <div class="variant-options" id="variantOptions"></div>
+      </div>
+
+      <div class="modal-quantity">
+        <p class="modal-label">Antal</p>
+        <div class="qty-stepper">
+          <button id="modalQtyMinus" aria-label="Reducér antal" type="button">−</button>
+          <span id="modalQtyValue" aria-live="polite">1</span>
+          <button id="modalQtyPlus" aria-label="Øg antal" type="button">+</button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="modalAddToBag">LÆG I KURV</button>
+
+      <ul class="modal-trust">
+        <li>Fri fragt</li>
+        <li>30 nætters prøveperiode</li>
+        <li>30 dages returret</li>
+      </ul>
+
+      <div class="modal-usps" id="modalUspsWrap" hidden>
+        <h3>Derfor vil du elske den</h3>
+        <ul id="modalUsps"></ul>
+        <p class="placeholder-note">Foreløbige produktpåstande — bekræftes ved endelig produktspecifikation.</p>
+      </div>
+
+      <div class="accordion" id="modalAccordion"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TOAST ===================== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

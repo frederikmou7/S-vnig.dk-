@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Shopify CLI
+.shopify/
+*.theme.json
+
+# Node (hvis der senere tilføjes build-værktøjer)
+node_modules/
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local

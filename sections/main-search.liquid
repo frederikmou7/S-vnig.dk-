@@ -1,0 +1,38 @@
+<section class="bestsellers search-page">
+  <div class="container">
+    <div class="section-header reveal">
+      {%- if search.performed -%}
+        <h1>{{ 'general.search.results_for_html' | t: count: search.results_count, terms: search.terms }}</h1>
+      {%- else -%}
+        <h1>{{ 'general.search.search' | t }}</h1>
+      {%- endif -%}
+    </div>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-page-form">
+      <input type="text" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.search' | t }}">
+      <input type="hidden" name="type" value="product">
+      <button type="submit" class="btn btn-outline">{{ 'general.search.search' | t | upcase }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results.size > 0 -%}
+        <div class="product-grid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', product: item %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <p class="collection-empty">{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Søgeresultater",
+  "settings": []
+}
+{% endschema %}

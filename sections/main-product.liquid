@@ -1,0 +1,215 @@
+{% comment %}
+  Rigtig Shopify produktside. Genbruger den visuelle stil fra
+  prototypens produkt-"modal" (modal-gallery / modal-info / accordion),
+  nu som en statisk sektion frem for en overlay — se reference/ for
+  det oprindelige design.
+{% endcomment %}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="product-page">
+  <div class="container product-page-grid">
+
+    <div class="modal-gallery">
+      <div class="modal-main-image" id="productMainImage">
+        {%- if current_variant.featured_media -%}
+          <img
+            id="productMainImageTag"
+            src="{{ current_variant.featured_media | image_url: width: 1200 }}"
+            alt="{{ current_variant.featured_media.alt | default: product.title | escape }}"
+            width="1200"
+            height="{{ 1200 | divided_by: current_variant.featured_media.aspect_ratio }}"
+            data-main-image>
+        {%- elsif product.featured_media -%}
+          <img
+            id="productMainImageTag"
+            src="{{ product.featured_media | image_url: width: 1200 }}"
+            alt="{{ product.featured_media.alt | default: product.title | escape }}"
+            width="1200"
+            height="{{ 1200 | divided_by: product.featured_media.aspect_ratio }}"
+            data-main-image>
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      {%- if product.media.size > 1 -%}
+        <div class="modal-thumbs" id="productThumbs">
+          {%- for media in product.media -%}
+            <button
+              type="button"
+              class="{% if forloop.first %}is-active{% endif %}"
+              data-thumb
+              data-media-src="{{ media | image_url: width: 1200 }}"
+              data-variant-ids="{{ media.variant_ids | join: ',' }}">
+              <img src="{{ media | image_url: width: 200 }}" alt="{{ media.alt | default: product.title | escape }}" width="200" height="{{ 200 | divided_by: media.aspect_ratio }}" loading="lazy">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="modal-info">
+      {%- if product.type != blank -%}
+        <p class="product-category">{{ product.type | upcase }}</p>
+      {%- endif -%}
+      <h1 id="ProductTitle">{{ product.title }}</h1>
+
+      {%- if product.metafields.custom.demo_rating != blank -%}
+        <div class="modal-rating">
+          <span aria-hidden="true">★★★★★</span>
+          <span>{{ product.metafields.custom.demo_rating }}</span>
+          <span class="demo-tag-inline">({{ 'products.product.demo_rating' | t }})</span>
+        </div>
+      {%- endif -%}
+
+      <p class="modal-price" id="ProductPrice">{% render 'price', product: product %}</p>
+
+      {%- if product.description != blank -%}
+        <div class="modal-description">{{ product.description }}</div>
+      {%- endif -%}
+
+      {%- form 'product', product, id: 'ProductForm', class: 'product-form' -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}" id="ProductVariantId">
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="modal-variants" data-option-index="{{ forloop.index0 }}">
+              <p class="modal-label">{{ option.name }}</p>
+              <div class="variant-options">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="{% if option.selected_value == value %}is-active{% endif %}"
+                    data-variant-option
+                    data-option-index="{{ forloop.parentloop.index0 }}"
+                    data-value="{{ value | escape }}">
+                    {{ value }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <div class="modal-quantity">
+          <p class="modal-label">{{ 'products.product.quantity' | t }}</p>
+          <div class="qty-stepper">
+            <button type="button" id="productQtyMinus" aria-label="{{ 'general.cart.decrease_quantity' | t }}">−</button>
+            <input type="number" name="quantity" id="productQtyInput" value="1" min="1" inputmode="numeric">
+            <button type="button" id="productQtyPlus" aria-label="{{ 'general.cart.increase_quantity' | t }}">+</button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          id="ProductAddToCart"
+          {% unless current_variant.available %}disabled{% endunless %}>
+          <span id="ProductAddToCartText">
+            {%- if current_variant.available -%}
+              {{ 'products.product.add_to_cart' | t | upcase }}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t | upcase }}
+            {%- endif -%}
+          </span>
+        </button>
+      {%- endform -%}
+
+      {%- if section.settings.show_trust_list -%}
+        <ul class="modal-trust">
+          <li>{{ 'products.product.free_shipping' | t }}</li>
+          <li>{{ 'products.product.trial' | t }}</li>
+          <li>{{ 'products.product.returns' | t }}</li>
+        </ul>
+      {%- endif -%}
+
+      {%- assign usp_blocks = section.blocks | where: 'type', 'usp' -%}
+      {%- if usp_blocks.size > 0 -%}
+        <div class="modal-usps">
+          <h3>{{ section.settings.usp_heading }}</h3>
+          <ul>
+            {%- for block in usp_blocks -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+          <p class="placeholder-note">{{ section.settings.usp_disclaimer }}</p>
+        </div>
+      {%- endif -%}
+
+      {%- assign accordion_blocks = section.blocks | where: 'type', 'accordion_item' -%}
+      {%- if accordion_blocks.size > 0 -%}
+        <div class="accordion">
+          {%- for block in accordion_blocks -%}
+            <div class="accordion-item" {{ block.shopify_attributes }}>
+              <button type="button" class="accordion-trigger" aria-expanded="false">
+                <span>{{ block.settings.title }}</span><span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">{{ block.settings.content }}</div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="ProductJSON-{{ product.id }}">
+  {{ product.variants | json }}
+</script>
+
+{% schema %}
+{
+  "name": "Produktside",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_trust_list",
+      "label": "Vis tillidsliste (fri fragt / prøveperiode / returret)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "usp_heading",
+      "label": "USP-overskrift",
+      "default": "Derfor vil du elske den"
+    },
+    {
+      "type": "text",
+      "id": "usp_disclaimer",
+      "label": "USP-forbehold (vises altid under USP-listen)",
+      "default": "Foreløbige produktpåstande — bekræftes ved endelig produktspecifikation."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP (placeholder)",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Tekst", "default": "Premium komfort" }
+      ]
+    },
+    {
+      "type": "accordion_item",
+      "name": "Accordion-sektion",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Produktdetaljer" },
+        { "type": "richtext", "id": "content", "label": "Indhold" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produktside",
+      "blocks": [
+        { "type": "accordion_item", "settings": { "title": "Produktdetaljer" } },
+        { "type": "accordion_item", "settings": { "title": "Materialer" } },
+        { "type": "accordion_item", "settings": { "title": "Fragt & retur" } },
+        { "type": "accordion_item", "settings": { "title": "Vedligeholdelse" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

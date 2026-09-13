@@ -1,0 +1,65 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="{{ routes.root_url }}" class="footer-logo">
+        {{ settings.logo_text }}
+      </a>
+      <p class="footer-tagline">{{ settings.footer_tagline }}</p>
+    </div>
+
+    {% for link in section.settings.footer_menu.links %}
+      <div class="footer-col">
+        <h4>{{ link.title | upcase }}</h4>
+        <ul>
+          {% for child_link in link.links %}
+            <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+    {% if settings.social_instagram_url != blank or settings.social_tiktok_url != blank or settings.social_pinterest_url != blank %}
+      <div class="footer-col">
+        <h4>{{ section.settings.social_heading | upcase }}</h4>
+        <ul>
+          {% if settings.social_instagram_url != blank %}
+            <li><a href="{{ settings.social_instagram_url }}" target="_blank" rel="noopener">{{ 'general.social.instagram' | t }}</a></li>
+          {% endif %}
+          {% if settings.social_tiktok_url != blank %}
+            <li><a href="{{ settings.social_tiktok_url }}" target="_blank" rel="noopener">{{ 'general.social.tiktok' | t }}</a></li>
+          {% endif %}
+          {% if settings.social_pinterest_url != blank %}
+            <li><a href="{{ settings.social_pinterest_url }}" target="_blank" rel="noopener">{{ 'general.social.pinterest' | t }}</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      {{ settings.footer_bottom_text }}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer-menu",
+      "info": "Opret en menu i Shopify Admin → Navigation med overskrifter som topniveau-links (fx \"Shop\", \"Om Søvnig\", \"Hjælp\") og underliggende links som deres børn. Hver topniveau-link bliver en footer-kolonne.",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Overskrift for sociale medier",
+      "default": "Sociale medier"
+    }
+  ]
+}
+{% endschema %}

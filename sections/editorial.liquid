@@ -1,0 +1,53 @@
+<section class="editorial reveal">
+  {%- if section.settings.image -%}
+    <img
+      src="{{ section.settings.image | image_url: width: 2400 }}"
+      alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+      loading="lazy"
+      width="2400"
+      height="{{ 2400 | divided_by: section.settings.image.aspect_ratio }}">
+  {%- else -%}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+  <div class="editorial-overlay">
+    <h2>{{ section.settings.heading | newline_to_br }}</h2>
+    {%- if section.settings.link_text != blank -%}
+      <a href="{{ section.settings.link_url | default: '#' }}" class="editorial-link">{{ section.settings.link_text | upcase }} →</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial-billede",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Billede"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Din aftenrutine\nstarter her."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link-tekst",
+      "default": "Se vores tilgang"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link-URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial-billede"
+    }
+  ]
+}
+{% endschema %}

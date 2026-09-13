@@ -1,0 +1,47 @@
+{% comment %}
+  Relaterede produkter via Shopifys rigtige Product Recommendations API.
+  Sektionen renderer sig selv, når den hentes via
+  routes.product_recommendations_url (se assets/product-form.js).
+{% endcomment %}
+
+<div
+  id="related-products-root"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}&intent=related">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <section class="bestsellers related-products">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>{{ section.settings.heading }}</h2>
+        </div>
+        <div class="product-grid">
+          {%- for product in recommendations.products -%}
+            {% render 'product-card', product: product, show_quick_add: false %}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Relaterede produkter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Du vil måske også kunne lide"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Antal produkter",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

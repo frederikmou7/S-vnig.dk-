@@ -1,0 +1,169 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Søvnig",
+    "theme_version": "1.0.0",
+    "theme_author": "Søvnig",
+    "theme_documentation_url": "https://github.com/",
+    "theme_support_url": "https://github.com/"
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Logotekst",
+        "default": "SØVNIG"
+      },
+      {
+        "type": "text",
+        "id": "logo_suffix",
+        "label": "Diskret sekundær tekst (fx .dk)",
+        "default": ".dk"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo-billede (valgfrit)",
+        "info": "Hvis valgt, erstatter billedet logoteksten i header og footer."
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo-bredde",
+        "min": 80,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "default": 140
+      }
+    ]
+  },
+  {
+    "name": "Farver",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Søvnig-paletten"
+      },
+      {
+        "type": "paragraph",
+        "content": "Standardværdierne matcher det oprindelige Søvnig-design. Skift kun med omtanke."
+      },
+      {
+        "type": "color",
+        "id": "color_warm_white",
+        "label": "Warm white (baggrund)",
+        "default": "#FAF7F1"
+      },
+      {
+        "type": "color",
+        "id": "color_ivory",
+        "label": "Ivory",
+        "default": "#F4EEE3"
+      },
+      {
+        "type": "color",
+        "id": "color_cream",
+        "label": "Cream",
+        "default": "#EEE4D3"
+      },
+      {
+        "type": "color",
+        "id": "color_beige",
+        "label": "Beige",
+        "default": "#E2D3BB"
+      },
+      {
+        "type": "color",
+        "id": "color_taupe",
+        "label": "Taupe",
+        "default": "#AC9C81"
+      },
+      {
+        "type": "color",
+        "id": "color_warm_grey",
+        "label": "Warm grey (brødtekst)",
+        "default": "#8B8171"
+      },
+      {
+        "type": "color",
+        "id": "color_charcoal",
+        "label": "Charcoal (primær tekst/knapper)",
+        "default": "#2B2620"
+      },
+      {
+        "type": "color",
+        "id": "color_dark_brown",
+        "label": "Dark brown",
+        "default": "#3A3227"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accentfarve (badges, stjerner, fremskridtslinje)",
+        "default": "#B9835F"
+      }
+    ]
+  },
+  {
+    "name": "Kurv",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Fri fragt fra (kr.)",
+        "info": "Beløb i hele kroner. Bruges til fremskridtslinjen i kurven.",
+        "default": 499
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_shipping_bar",
+        "label": "Vis fri fragt-fremskridtslinje i kurven",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Sociale medier",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Udfyld kun de profiler, der reelt findes. Tomme felter skjuler ikonet i footeren."
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_url",
+        "label": "Instagram-URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_url",
+        "label": "TikTok-URL"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_url",
+        "label": "Pinterest-URL"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_tagline",
+        "label": "Tagline",
+        "default": "Alt til en bedre nat."
+      },
+      {
+        "type": "richtext",
+        "id": "footer_bottom_text",
+        "label": "Bundtekst / copyright",
+        "default": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+      }
+    ]
+  }
+]

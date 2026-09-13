@@ -1,0 +1,75 @@
+{% comment %}
+  Demo-anmeldelser. Tydeligt markeret som prototype-indhold —
+  se schema-info og den synlige demo-tag i sektionen.
+{% endcomment %}
+
+<section class="reviews reveal">
+  <div class="container narrow">
+    <div class="section-header">
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="demo-tag">{{ section.settings.demo_label }}</p>
+    </div>
+    <div class="reviews-grid">
+      {%- for block in section.blocks -%}
+        <blockquote class="review" {{ block.shopify_attributes }}>
+          <p class="stars" aria-hidden="true">
+            {%- for i in (1..5) -%}★{%- endfor -%}
+          </p>
+          <p class="review-quote">"{{ block.settings.quote }}"</p>
+          <cite>— {{ block.settings.author }}</cite>
+        </blockquote>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Anmeldelser (demo)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Hvad folk siger"
+    },
+    {
+      "type": "text",
+      "id": "demo_label",
+      "label": "Demo-mærkat",
+      "info": "Vises synligt, så det er tydeligt, at anmeldelserne ikke er ægte.",
+      "default": "Demo-anmeldelser — kun til prototypeformål, ikke rigtige kundeanmeldelser."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Anmeldelse (demo)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Citat",
+          "default": "Det føles rigtig rart at have en blødere aftenrutine."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Forfatter",
+          "default": "Emma, København"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anmeldelser (demo)",
+      "blocks": [
+        { "type": "review", "settings": { "quote": "Det føles rigtig rart at have en blødere aftenrutine.", "author": "Emma, København" } },
+        { "type": "review", "settings": { "quote": "Sovemasken er blevet en fast del af min aften.", "author": "Oliver, Aarhus" } },
+        { "type": "review", "settings": { "quote": "Puden er den bedste investering, jeg har gjort i min søvn.", "author": "Clara, København" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

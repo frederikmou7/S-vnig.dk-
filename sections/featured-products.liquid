@@ -1,0 +1,95 @@
+<section class="bestsellers" id="shop">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="product-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.product != blank -%}
+          {% render 'product-card',
+            product: block.settings.product,
+            badge_text: block.settings.badge_text,
+            card_title: block.settings.title_override,
+            card_description: block.settings.description_override
+          %}
+        {%- else -%}
+          <article class="product-card reveal">
+            <div class="product-card-media-wrap">
+              <div class="product-card-media">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="product-card-info">
+              <p class="product-category">{{ 'general.404.title' | t }}</p>
+              <h3 class="product-name">Vælg et produkt i temaeditoren</h3>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Udvalgte produkter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Søvnig-udvalget"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Undertekst",
+      "default": "Alt til en bedre nat og en god aftenrutine."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produkt",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produkt"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge-tekst (valgfri)",
+          "info": "Overstyrer automatisk tilbudsbadge, fx \"SØVNIG FAVORIT\"."
+        },
+        {
+          "type": "text",
+          "id": "title_override",
+          "label": "Titel (overstyrer produkttitel)"
+        },
+        {
+          "type": "text",
+          "id": "description_override",
+          "label": "Kort beskrivelse (overstyrer produktbeskrivelse)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Udvalgte produkter",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

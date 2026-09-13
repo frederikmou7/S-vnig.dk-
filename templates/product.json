@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "a1": { "type": "accordion_item", "settings": { "title": "Produktdetaljer", "content": "<p>Prototype-koncept — beskriv de vigtigste egenskaber ved produktet her.</p>" } },
+        "a2": { "type": "accordion_item", "settings": { "title": "Materialer", "content": "<p>Materialesammensætningen er endnu ikke fastlagt. Placeholder-tekst til prototypeformål.</p>" } },
+        "a3": { "type": "accordion_item", "settings": { "title": "Fragt & retur", "content": "<p>Fri fragt ved køb over 799 kr. 30 dages returret. Præcis leveringstid bekræftes ved checkout.</p>" } },
+        "a4": { "type": "accordion_item", "settings": { "title": "Vedligeholdelse", "content": "<p>Vaskeanvisning følger med den endelige emballage.</p>" } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"]
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Du vil måske også kunne lide"
+      }
+    }
+  },
+  "order": ["main", "related"]
+}

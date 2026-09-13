@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code | default: 'da' }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  {{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+</title>
+
+{% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+{% endif %}
+
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233A3227'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23F5EFE6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+<!--
+  ============================================================
+  SØVNIG — Shopify Online Store 2.0 theme
+  Konverteret fra den statiske design-prototype i /reference.
+  Se README.md for arkitektur og opsætning.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+{{ 'theme.css' | asset_url | stylesheet_tag }}
+
+<style>
+  :root {
+    --color-warm-white: {{ settings.color_warm_white }};
+    --color-ivory: {{ settings.color_ivory }};
+    --color-cream: {{ settings.color_cream }};
+    --color-beige: {{ settings.color_beige }};
+    --color-taupe: {{ settings.color_taupe }};
+    --color-warm-grey: {{ settings.color_warm_grey }};
+    --color-charcoal: {{ settings.color_charcoal }};
+    --color-dark-brown: {{ settings.color_dark_brown }};
+    --color-accent: {{ settings.color_accent }};
+  }
+</style>
+
+<script>
+  window.Sovnig = window.Sovnig || {};
+  window.Sovnig.routes = {
+    cartUrl: {{ routes.cart_url | json }},
+    cartAddUrl: {{ routes.cart_add_url | json }},
+    cartChangeUrl: {{ routes.cart_change_url | json }},
+    cartUpdateUrl: {{ routes.cart_update_url | json }},
+    predictiveSearchUrl: {{ routes.predictive_search_url | json }},
+    searchUrl: {{ routes.search_url | json }}
+  };
+  window.Sovnig.strings = {
+    addedTemplate: {{ 'general.cart.added' | t: title: '%%TITLE%%' | json }},
+    error: {{ 'general.cart.error' | t | json }},
+    noResultsTemplate: {{ 'general.search.no_results_html' | t: terms: '%%TERMS%%' | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    addToCart: {{ 'products.product.add_to_cart' | t | json }}
+  };
+  window.Sovnig.moneyFormat = {{ shop.money_format | json }};
+</script>
+<script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+
+{% if template contains 'product' %}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+{{ content_for_header }}
+</head>
+
+<body class="template-{{ request.page_type }}">
+
+<a class="skip-link" href="#main-content">{{ 'accessibility.skip_to_content' | t }}</a>
+
+{% section 'announcement-bar' %}
+{% section 'header' %}
+
+{% render 'search-drawer' %}
+
+<main id="main-content">
+  {{ content_for_layout }}
+</main>
+
+{% section 'footer' %}
+
+{% section 'cart-drawer' %}
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

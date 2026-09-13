@@ -1,0 +1,39 @@
+{% comment %}
+  Kurv-linje til /cart-siden (fallback uden JS). Bruger native
+  formularer i stedet for AJAX, så siden virker uafhængigt af
+  kurv-drawerens script. Forventer: item, item_index
+{% endcomment %}
+
+<div class="cart-item">
+  <a href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+    <img class="cart-item-img" src="{{ item.image | image_url: width: 160 }}" alt="{{ item.image.alt | default: item.product.title | escape }}" width="74" height="90" loading="lazy">
+  </a>
+  <div class="cart-item-details">
+    <a href="{{ item.url }}" class="cart-item-name">{{ item.product.title }}</a>
+    {%- unless item.product.has_only_default_variant -%}
+      <p class="cart-item-variant">{{ item.variant.title }}</p>
+    {%- endunless -%}
+
+    <div class="cart-item-row">
+      <label>
+        <span class="sr-only">{{ 'general.cart.quantity' | t }}</span>
+        <input
+          class="cart-item-qty-input"
+          type="number"
+          name="updates[{{ item.key }}]"
+          value="{{ item.quantity }}"
+          min="0"
+          inputmode="numeric"
+          form="CartPageForm">
+      </label>
+      <span class="cart-item-price">{{ item.final_line_price | money_without_trailing_zeros }}</span>
+    </div>
+
+    <button type="submit" form="RemoveForm-{{ item_index }}" class="cart-item-remove">{{ 'general.cart.remove' | t }}</button>
+  </div>
+</div>
+
+<form id="RemoveForm-{{ item_index }}" action="{{ routes.cart_change_url }}" method="post" hidden>
+  <input type="hidden" name="id" value="{{ item.key }}">
+  <input type="hidden" name="quantity" value="0">
+</form>

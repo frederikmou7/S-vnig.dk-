@@ -1,0 +1,20 @@
+{% comment %}
+  Søgeoverlay. Bruger Shopifys Predictive Search API (assets/predictive-search.js)
+  til at hente rigtige produkter — ingen hardcoded produktdata.
+{% endcomment %}
+
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}" aria-hidden="true">
+  <div class="search-box">
+    {% render 'icon-search' %}
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="{{ 'general.search.placeholder' | t }}"
+      aria-label="{{ 'general.search.search' | t }}"
+      autocomplete="off">
+    <button class="modal-close" id="searchCloseBtn" aria-label="{{ 'general.search.close' | t }}">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>

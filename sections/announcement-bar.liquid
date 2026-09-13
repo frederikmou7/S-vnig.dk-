@@ -1,0 +1,17 @@
+<div class="announcement-bar">
+  <p>{{ section.settings.text }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Topbjælke",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Tekst",
+      "default": "Fri fragt ved køb over 799 kr. · 30 dages returret"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,127 @@
+{% comment %}
+  Sæt-sektion (fx Søvnig Sættet). Henter pris/compare-at og
+  variant-id fra et rigtigt Shopify-produkt; "Få sættet"-knappen
+  lægger produktet direkte i kurven via Shopifys AJAX cart.
+{% endcomment %}
+
+{%- assign product = section.settings.product -%}
+{%- assign variant = product.selected_or_first_available_variant -%}
+
+<section class="bundle">
+  <div class="container bundle-grid">
+    <div class="bundle-media reveal">
+      {%- if product and product.featured_media -%}
+        <img
+          src="{{ product.featured_media | image_url: width: 2000 }}"
+          alt="{{ product.featured_media.alt | default: product.title | escape }}"
+          loading="lazy"
+          width="2000"
+          height="{{ 2000 | divided_by: product.featured_media.aspect_ratio }}">
+      {%- elsif section.settings.image -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 2000 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+          width="2000"
+          height="{{ 2000 | divided_by: section.settings.image.aspect_ratio }}">
+      {%- else -%}
+        {{ 'lifestyle-3' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    <div class="bundle-content reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow">{{ section.settings.eyebrow | upcase }}</p>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="bundle-items">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if product -%}
+        <div class="bundle-price">
+          {% render 'price', product: product %}
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="bundleAddBtn"
+          data-quick-add-form
+          data-variant-id="{{ variant.id }}"
+          data-product-title="{{ product.title | escape }}"
+          {% unless product.available %}disabled{% endunless %}>
+          {%- if product.available -%}
+            {{ section.settings.button_text | upcase }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t | upcase }}
+          {%- endif -%}
+        </button>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sæt-promo",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Sæt-produkt",
+      "info": "Pris, compare-at price og \"Få sættet\"-knappen bruger dette produkt."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Billede (bruges kun hvis produktet ikke har et billede)"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Lille overskrift",
+      "default": "Den komplette aftenrutine"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Alt, hvad du behøver, i ét sæt."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Knap-tekst",
+      "default": "Få sættet"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Vare i sættet",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tekst",
+          "default": "Søvnig Puden"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sæt-promo",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Søvnig Puden" } },
+        { "type": "item", "settings": { "text": "Søvnig Sovemasken" } },
+        { "type": "item", "settings": { "text": "Søvnig Næsestrips" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

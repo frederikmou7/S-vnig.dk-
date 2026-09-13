@@ -1,0 +1,64 @@
+{% comment %}
+  Genanvendeligt produktkort i Søvnig-design.
+  Forventer: product (Shopify product objekt)
+  Valgfrit: badge_text, card_title, card_description, show_quick_add (default true)
+{% endcomment %}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign show_quick_add_final = true
+  if show_quick_add == false
+    assign show_quick_add_final = false
+  endif
+-%}
+
+<article class="product-card reveal" data-product-id="{{ product.id }}">
+  <div class="product-card-media-wrap">
+    <a href="{{ product.url }}" class="product-card-media" aria-label="{{ 'products.product.view_details' | t }}: {{ product.title }}">
+      {%- if badge_text -%}
+        <span class="badge badge-accent">{{ badge_text | upcase }}</span>
+      {%- elsif product.available == false -%}
+        <span class="badge">{{ 'products.product.sold_out' | t | upcase }}</span>
+      {%- elsif product.compare_at_price > product.price -%}
+        {%- assign savings = product.compare_at_price | minus: product.price -%}
+        {%- assign savings_formatted = savings | money_without_trailing_zeros -%}
+        <span class="badge">{{ 'products.product.save_amount_html' | t: amount: savings_formatted | upcase }}</span>
+      {%- endif -%}
+
+      {%- if product.featured_media -%}
+        <img
+          src="{{ product.featured_media | image_url: width: 900 }}"
+          alt="{{ product.featured_media.alt | default: product.title | escape }}"
+          loading="lazy"
+          width="900"
+          height="{{ 900 | divided_by: product.featured_media.aspect_ratio }}">
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </a>
+
+    {%- if show_quick_add_final and product.available -%}
+      <button
+        type="button"
+        class="quick-add"
+        data-quick-add-form
+        data-variant-id="{{ variant.id }}"
+        data-product-title="{{ product.title | escape }}">
+        {{ 'products.product.quick_add' | t | upcase }}
+      </button>
+    {%- endif -%}
+  </div>
+
+  <div class="product-card-info">
+    {%- if product.type != blank -%}
+      <p class="product-category">{{ product.type | upcase }}</p>
+    {%- endif -%}
+    <h3 class="product-name"><a href="{{ product.url }}">{{ card_title | default: product.title }}</a></h3>
+    {%- if card_description != blank -%}
+      <p class="product-desc">{{ card_description }}</p>
+    {%- elsif product.description != blank -%}
+      <p class="product-desc">{{ product.description | strip_html | truncate: 80 }}</p>
+    {%- endif -%}
+    <p class="product-price">{% render 'price', product: product %}</p>
+  </div>
+</article>

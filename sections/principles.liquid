@@ -1,0 +1,50 @@
+<section class="principles">
+  <div class="container">
+    <div class="principles-grid">
+      {%- for block in section.blocks -%}
+        <div class="principle reveal" {{ block.shopify_attributes }}>
+          <span class="principle-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <h3>{{ block.settings.heading }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tre principper",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "principle",
+      "name": "Princip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Overskrift",
+          "default": "Komfort"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tekst",
+          "default": "Følelsen af at synke ned i en god seng."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tre principper",
+      "blocks": [
+        { "type": "principle", "settings": { "heading": "Komfort", "text": "Følelsen af at synke ned i en god seng." } },
+        { "type": "principle", "settings": { "heading": "Mørke", "text": "Mindre lys. Færre forstyrrelser." } },
+        { "type": "principle", "settings": { "heading": "Ro", "text": "Produkter designet til at gøre sengetid til en rar rutine." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

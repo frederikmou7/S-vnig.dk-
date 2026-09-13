@@ -1,0 +1,40 @@
+{
+  "current": {
+    "logo_text": "SØVNIG",
+    "logo_suffix": ".dk",
+    "logo_width": 140,
+    "color_warm_white": "#FAF7F1",
+    "color_ivory": "#F4EEE3",
+    "color_cream": "#EEE4D3",
+    "color_beige": "#E2D3BB",
+    "color_taupe": "#AC9C81",
+    "color_warm_grey": "#8B8171",
+    "color_charcoal": "#2B2620",
+    "color_dark_brown": "#3A3227",
+    "color_accent": "#B9835F",
+    "free_shipping_threshold": 499,
+    "cart_show_shipping_bar": true,
+    "footer_tagline": "Alt til en bedre nat.",
+    "footer_bottom_text": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+  },
+  "presets": {
+    "Søvnig": {
+      "logo_text": "SØVNIG",
+      "logo_suffix": ".dk",
+      "logo_width": 140,
+      "color_warm_white": "#FAF7F1",
+      "color_ivory": "#F4EEE3",
+      "color_cream": "#EEE4D3",
+      "color_beige": "#E2D3BB",
+      "color_taupe": "#AC9C81",
+      "color_warm_grey": "#8B8171",
+      "color_charcoal": "#2B2620",
+      "color_dark_brown": "#3A3227",
+      "color_accent": "#B9835F",
+      "free_shipping_threshold": 499,
+      "cart_show_shipping_bar": true,
+      "footer_tagline": "Alt til en bedre nat.",
+      "footer_bottom_text": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+    }
+  }
+}

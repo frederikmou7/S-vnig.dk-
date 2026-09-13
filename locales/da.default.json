@@ -1,0 +1,96 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagget \"{{ tags }}\"",
+      "page": "Side {{ page }}"
+    },
+    "search": {
+      "search": "Søg",
+      "placeholder": "Søg efter puder, sovemasker, tilbehør…",
+      "no_results_html": "Ingen produkter fundet for \"{{ terms }}\".",
+      "close": "Luk søgning",
+      "results_for_html": "{{ count }} resultater for \"{{ terms }}\""
+    },
+    "cart": {
+      "title": "Din kurv",
+      "empty": "Din kurv er tom.",
+      "continue_shopping": "Fortsæt shopping",
+      "subtotal": "Subtotal",
+      "total": "I alt",
+      "checkout": "Fortsæt til checkout",
+      "update": "Opdater kurv",
+      "remove": "Fjern",
+      "quantity": "Antal",
+      "decrease_quantity": "Reducér antal",
+      "increase_quantity": "Øg antal",
+      "free_shipping_unlocked": "Du har opnået fri fragt.",
+      "free_shipping_progress_html": "Du er {{ amount }} fra fri fragt.",
+      "note": "Fragt og moms beregnes ved checkout.",
+      "view_cart": "Se kurv",
+      "added": "{{ title }} er lagt i kurven.",
+      "error": "Der opstod en fejl. Prøv igen.",
+      "sale": "Tilbud"
+    },
+    "newsletter": {
+      "heading": "Små påmindelser om bedre nætter.",
+      "text": "Nye produkter, gode råd og adgang før alle andre.",
+      "placeholder": "Din e-mailadresse",
+      "submit": "Tilmeld dig Søvnig",
+      "success": "Du er tilmeldt. Velkommen til Søvnig.",
+      "error": "Indtast venligst en gyldig e-mailadresse."
+    },
+    "menu": {
+      "open": "Åbn menu",
+      "close": "Luk menu"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest"
+    },
+    "404": {
+      "title": "Siden blev ikke fundet",
+      "text": "Siden, du leder efter, findes ikke.",
+      "link": "Tilbage til forsiden"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Læg i kurv",
+      "sold_out": "Udsolgt",
+      "unavailable": "Ikke tilgængelig",
+      "quantity": "Antal",
+      "choose_options": "Vælg variant",
+      "on_sale": "Tilbud",
+      "regular_price": "Normalpris",
+      "sale_price": "Tilbudspris",
+      "view_details": "Se produkt",
+      "quick_add": "Tilføj",
+      "product_details": "Produktdetaljer",
+      "related_products": "Du vil måske også kunne lide",
+      "demo_rating": "Demo-vurdering",
+      "free_shipping": "Fri fragt",
+      "save_amount_html": "Spar {{ amount }}",
+      "trial": "30 nætters prøveperiode",
+      "returns": "30 dages returret"
+    }
+  },
+  "collections": {
+    "general": {
+      "all_products": "Alle produkter",
+      "no_products": "Ingen produkter fundet i denne kategori endnu.",
+      "items_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter"
+      }
+    }
+  },
+  "sections": {
+    "announcement": {
+      "default_text": "Fri fragt ved køb over 799 kr. · 30 dages returret"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Spring til indhold"
+  }
+}

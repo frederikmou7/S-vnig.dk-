@@ -1,0 +1,35 @@
+{% comment %}
+  Én linje i kurven. Bruges af både cart-drawer-sektionen og /cart-siden.
+  Forventer: item (et cart line item objekt)
+{% endcomment %}
+
+<div class="cart-item" data-cart-item data-key="{{ item.key }}">
+  <a href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+    <img class="cart-item-img" src="{{ item.image | image_url: width: 160 }}" alt="{{ item.image.alt | default: item.product.title | escape }}" width="74" height="90" loading="lazy">
+  </a>
+  <div class="cart-item-details">
+    <a href="{{ item.url }}" class="cart-item-name">{{ item.product.title }}</a>
+    {%- unless item.product.has_only_default_variant -%}
+      <p class="cart-item-variant">{{ item.variant.title }}</p>
+    {%- endunless -%}
+    {%- if item.properties.size > 0 -%}
+      {%- for property in item.properties -%}
+        {%- assign property_first_char = property.first | slice: 0 -%}
+        {%- if property.last != blank and property_first_char != '_' -%}
+          <p class="cart-item-variant">{{ property.first }}: {{ property.last }}</p>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    <div class="cart-item-row">
+      <div class="cart-item-qty">
+        <button type="button" data-cart-qty-minus aria-label="{{ 'general.cart.decrease_quantity' | t }}">−</button>
+        <span data-cart-qty-value>{{ item.quantity }}</span>
+        <button type="button" data-cart-qty-plus aria-label="{{ 'general.cart.increase_quantity' | t }}">+</button>
+      </div>
+      <span class="cart-item-price" data-cart-item-price>{{ item.final_line_price | money_without_trailing_zeros }}</span>
+    </div>
+
+    <button type="button" class="cart-item-remove" data-cart-remove>{{ 'general.cart.remove' | t }}</button>
+  </div>
+</div>

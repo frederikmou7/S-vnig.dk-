@@ -1,0 +1,56 @@
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="{{ 'general.menu.open' | t }}" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="{{ routes.root_url }}" class="logo">
+      {%- if settings.logo_image -%}
+        {%- assign logo_render_width = settings.logo_width | times: 2 -%}
+        {%- assign logo_height = settings.logo_width | divided_by: settings.logo_image.aspect_ratio -%}
+        <img
+          src="{{ settings.logo_image | image_url: width: logo_render_width }}"
+          alt="{{ shop.name }}"
+          width="{{ settings.logo_width }}"
+          height="{{ logo_height }}"
+          style="width: {{ settings.logo_width }}px; height: auto;">
+      {%- else -%}
+        {{ settings.logo_text }}<span class="logo-dk">{{ settings.logo_suffix }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="main-nav" aria-label="Hovednavigation">
+      <ul>
+        {% for link in section.settings.menu.links %}
+          <li><a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" id="searchOpenBtn" aria-label="{{ 'general.search.search' | t }}" aria-haspopup="dialog">
+        {% render 'icon-search' %}
+      </button>
+      <button class="icon-btn cart-toggle" id="cartOpenBtn" aria-label="{{ 'general.cart.title' | t }}" aria-haspopup="dialog">
+        {% render 'icon-cart' %}
+        <span class="cart-badge" id="cartBadge" data-cart-badge {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% render 'mobile-nav', menu: section.settings.menu %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}
