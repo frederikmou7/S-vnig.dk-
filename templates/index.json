@@ -82,6 +82,7 @@
     "editorial": {
       "type": "editorial",
       "settings": {
+        "image": "shopify://shop_images/editorial.jpg",
         "heading": "Din aftenrutine\nstarter her.",
         "link_text": "Se vores tilgang",
         "link_url": "#om-soevnig"
