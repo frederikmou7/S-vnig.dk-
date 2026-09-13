@@ -34,7 +34,7 @@
         "p1": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-puden",
             "badge_text": "Søvnig favorit",
             "title_override": "",
             "description_override": ""
@@ -43,7 +43,7 @@
         "p2": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-naesestrips",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
@@ -52,7 +52,7 @@
         "p3": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-sovemasken",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
@@ -61,7 +61,7 @@
         "p4": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "sovnig-saettet",
             "badge_text": "",
             "title_override": "",
             "description_override": ""
@@ -155,7 +155,7 @@
         "u4"
       ],
       "settings": {
-        "product": "",
+        "product": "sovnig-puden",
         "eyebrow": "Søvnig Puden",
         "heading": "Mød puden, der gør sengen svær at forlade.",
         "text": "Blød, hvor du vil have den. Support, hvor du har brug for den. Designet til at give dig følelsen af en god hotelseng, hjemme hos dig selv.",
@@ -225,7 +225,7 @@
         "b3"
       ],
       "settings": {
-        "product": "",
+        "product": "sovnig-saettet",
         "eyebrow": "Den komplette aftenrutine",
         "heading": "Alt, hvad du behøver, i ét sæt.",
         "button_text": "Få sættet"
