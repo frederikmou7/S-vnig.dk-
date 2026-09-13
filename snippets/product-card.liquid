@@ -12,7 +12,7 @@
   endif
 -%}
 
-<article class="product-card reveal" data-product-id="{{ product.id }}">
+<article class="product-card reveal" data-product-id="{{ product.id }}"{% if block %} {{ block.shopify_attributes }}{% endif %}>
   <div class="product-card-media-wrap">
     <a href="{{ product.url }}" class="product-card-media" aria-label="{{ 'products.product.view_details' | t }}: {{ product.title }}">
       {%- if badge_text -%}

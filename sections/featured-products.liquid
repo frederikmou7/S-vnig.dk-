@@ -14,10 +14,11 @@
             product: block.settings.product,
             badge_text: block.settings.badge_text,
             card_title: block.settings.title_override,
-            card_description: block.settings.description_override
+            card_description: block.settings.description_override,
+            block: block
           %}
         {%- else -%}
-          <article class="product-card reveal">
+          <article class="product-card reveal" {{ block.shopify_attributes }}>
             <div class="product-card-media-wrap">
               <div class="product-card-media">
                 {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
