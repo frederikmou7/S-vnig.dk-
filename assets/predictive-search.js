@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SØVNIG — predictive-search.js
+   SOMIRA — predictive-search.js
    Rigtig Shopify Predictive Search (/search/suggest.json). Ingen
    hardcoded produktliste — resultaterne kommer direkte fra Shopify.
    ========================================================================== */
@@ -12,8 +12,8 @@
   const searchResultsEl = qs('#searchResults');
   if (!searchInput || !searchResultsEl) return;
 
-  const routes = (window.Sovnig && window.Sovnig.routes) || {};
-  const strings = (window.Sovnig && window.Sovnig.strings) || {};
+  const routes = (window.Somira && window.Somira.routes) || {};
+  const strings = (window.Somira && window.Somira.strings) || {};
   const suggestUrl = (routes.predictiveSearchUrl || '/search/suggest') + '.json';
 
   let debounceTimer = null;

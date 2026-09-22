@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SØVNIG — product-form.js
+   SOMIRA — product-form.js
    Kun indlæst på produktsiden. Håndterer variant-valg, antal,
    galleri-miniaturer, Add to cart (AJAX via cart.js) og relaterede
    produkter (Shopify Product Recommendations API).
@@ -14,11 +14,11 @@
   const form = qs('#ProductForm');
   if (!form) return;
 
-  const strings = (window.Sovnig && window.Sovnig.strings) || {};
+  const strings = (window.Somira && window.Somira.strings) || {};
 
   /* ---------------------------- Beløbsformattering (matcher shop.money_format) ---------------------------- */
   function formatMoney(cents) {
-    const format = window.Sovnig && window.Sovnig.moneyFormat ? window.Sovnig.moneyFormat : '{{amount}}';
+    const format = window.Somira && window.Somira.moneyFormat ? window.Somira.moneyFormat : '{{amount}}';
     const amount = (cents / 100).toFixed(2);
     const withoutTrailing = amount.endsWith('.00') ? Math.round(cents / 100).toString() : amount.replace('.', ',');
     return format.replace(/\{\{\s*amount\s*\}\}/, withoutTrailing);
@@ -120,8 +120,8 @@
     const variantId = variantIdInput ? variantIdInput.value : null;
     const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
     const title = qs('#ProductTitle') ? qs('#ProductTitle').textContent.trim() : '';
-    if (window.Sovnig && window.Sovnig.addToCart) {
-      window.Sovnig.addToCart(variantId, qty, title);
+    if (window.Somira && window.Somira.addToCart) {
+      window.Somira.addToCart(variantId, qty, title);
     }
   });
 
@@ -137,7 +137,7 @@
           const fresh = doc.getElementById('related-products-root');
           if (fresh && fresh.innerHTML.trim()) {
             relatedRoot.innerHTML = fresh.innerHTML;
-            if (window.Sovnig && window.Sovnig.observeReveals) window.Sovnig.observeReveals();
+            if (window.Somira && window.Somira.observeReveals) window.Somira.observeReveals();
           }
         })
         .catch(() => { /* stille fejl — sektionen forbliver tom */ });

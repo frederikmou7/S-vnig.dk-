@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Søvnig",
+    "theme_name": "Somira",
     "theme_version": "1.0.0",
-    "theme_author": "Søvnig",
+    "theme_author": "Somira",
     "theme_documentation_url": "https://github.com/",
     "theme_support_url": "https://github.com/"
   },
@@ -14,7 +14,7 @@
         "type": "text",
         "id": "logo_text",
         "label": "Logotekst",
-        "default": "SØVNIG"
+        "default": "SOMIRA"
       },
       {
         "type": "text",
@@ -45,11 +45,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "Søvnig-paletten"
+        "content": "Somira-paletten"
       },
       {
         "type": "paragraph",
-        "content": "Standardværdierne matcher det oprindelige Søvnig-design. Skift kun med omtanke."
+        "content": "Standardværdierne matcher det oprindelige Somira-design. Skift kun med omtanke."
       },
       {
         "type": "color",
@@ -162,7 +162,7 @@
         "type": "richtext",
         "id": "footer_bottom_text",
         "label": "Bundtekst / copyright",
-        "default": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+        "default": "<p>© 2026 Somira. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
       }
     ]
   }

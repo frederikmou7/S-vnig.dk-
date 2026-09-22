@@ -1,10 +1,10 @@
-# CLAUDE.md — SØVNIG.DK
+# CLAUDE.md — SOMIRA.DK
 
 ## 1. Projektet
 
-Dette repository er den officielle kodebase for **Søvnig.dk**.
+Dette repository er den officielle kodebase for **Somira.dk**.
 
-Søvnig er et dansk e-commerce brand inden for søvn, komfort, aftenrutiner og sleep accessories.
+Somira er et dansk e-commerce brand inden for søvn, komfort, aftenrutiner og sleep accessories.
 
 Shopify bruges til:
 
@@ -30,11 +30,11 @@ Claude må gerne hjælpe med at udvikle, vedligeholde og forbedre projektet, men
 
 Brandnavn:
 
-**SØVNIG**
+**SOMIRA**
 
 Domæne:
 
-**søvnig.dk**
+**somira.dk**
 
 Primært marked:
 
@@ -64,7 +64,7 @@ eller
 
 # 3. BRANDPOSITIONERING
 
-Søvnig er et moderne dansk sleep/wellness-brand.
+Somira er et moderne dansk sleep/wellness-brand.
 
 Brandet skal føles:
 
@@ -80,7 +80,7 @@ Brandet skal føles:
 - premium
 - tilgængeligt
 
-Søvnig skal være:
+Somira skal være:
 
 **premium uden at være luksus**
 
@@ -92,7 +92,7 @@ Søvnig skal være:
 
 **e-commerce uden at ligne dropshipping**
 
-Søvnig skal IKKE ligne:
+Somira skal IKKE ligne:
 
 - apotek
 - medicinsk hjemmeside
@@ -106,7 +106,7 @@ Søvnig skal IKKE ligne:
 
 # 4. PRODUKTSTRATEGI
 
-Søvnig starter småt.
+Somira starter småt.
 
 Brandet skal ikke kun handle om dyre produkter.
 
@@ -129,7 +129,7 @@ Ca. 349–599 kr.
 
 Eksempel:
 
-- Søvnig Natkit
+- Somira Natkit
 
 ## Hero products
 
@@ -137,12 +137,12 @@ Ca. 699–999+ kr.
 
 Eksempler:
 
-- Søvnig Puden
+- Somira Puden
 - senere dyner
 - sengetøj
 - større sleep products
 
-Forretningsidéen er, at en kunde kan opdage Søvnig gennem et mindre produkt og senere købe dyrere produkter.
+Forretningsidéen er, at en kunde kan opdage Somira gennem et mindre produkt og senere købe dyrere produkter.
 
 Hjemmesiden skal understøtte denne kunderejse.
 
@@ -170,7 +170,7 @@ Undgå at bygge theme-arkitekturen så snævert, at den kun fungerer til nuvære
 
 # 6. DESIGN — MEGET VIGTIGT
 
-Den oprindelige Søvnig-prototype er den **visuelle source of truth**.
+Den oprindelige Somira-prototype er den **visuelle source of truth**.
 
 Referencefilerne ligger i:
 
@@ -459,7 +459,7 @@ Mundtape skal behandles som et produkt, der kræver særskilt sikkerheds- og com
 
 # 18. ANMELDELSER
 
-Indtil Søvnig har rigtige kunder:
+Indtil Somira har rigtige kunder:
 
 - brug ikke falske anmeldelser som ægte social proof
 - brug ikke falske ratings
@@ -491,7 +491,7 @@ Undgå corporate-sprog.
 
 Undgå overdreven marketing jargon.
 
-Søvnig må gerne have lidt personlighed.
+Somira må gerne have lidt personlighed.
 
 Eksempel på tone:
 
@@ -499,7 +499,7 @@ Eksempel på tone:
 
 "Små ting. Bedre nætter."
 
-"Gør dig klar til at blive søvnig."
+"Bliv bedre til at sove godt."
 
 "Når verden godt må skrue lidt ned."
 
@@ -543,7 +543,7 @@ Eksempler:
 
 `Fix product gallery spacing`
 
-`Restore original Søvnig hero styling`
+`Restore original Somira hero styling`
 
 `Add Shopify metafields for product details`
 
@@ -595,7 +595,7 @@ Målet er ikke at vælge mellem design og funktionalitet.
 
 Målet er:
 
-**det originale Søvnig-design + korrekt Shopify-funktionalitet**
+**det originale Somira-design + korrekt Shopify-funktionalitet**
 
 ---
 
@@ -618,7 +618,7 @@ Hvis Claude mener, at en anden løsning er bedre, skal den:
 Hvis regler eller løsninger konflikter, prioritér i denne rækkefølge:
 
 1. Funktionel og sikker Shopify-butik
-2. Bevar Søvnig-brandet
+2. Bevar Somira-brandet
 3. Bevar det originale visuelle design
 4. God UX
 5. Performance
@@ -648,7 +648,7 @@ noter om hvordan theme'et rent teknisk hænger sammen — til hurtig orientering
 i fremtidige sessioner.
 
 - `layout/theme.liquid` sætter CSS-variabler fra Temaindstillinger
-  (`settings.color_*`) og eksponerer `window.Sovnig.routes/strings/moneyFormat`
+  (`settings.color_*`) og eksponerer `window.Somira.routes/strings/moneyFormat`
   til JS, inden `assets/*.js` indlæses.
 - Kurv-draweren (`sections/cart-drawer.liquid`) er en statisk sektion
   (renderes direkte fra `theme.liquid`, ikke fra en JSON-template), så den

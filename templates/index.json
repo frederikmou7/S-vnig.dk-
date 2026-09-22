@@ -13,9 +13,9 @@
       "type": "hero",
       "settings": {
         "image": "shopify://shop_images/hero.jpg",
-        "heading": "Bliv bedre til\nat være søvnig.",
+        "heading": "Bliv bedre til\nat sove godt.",
         "subheading": "Produkter til søvn, komfort og din aftenrutine — samlet ét sted.",
-        "button_1_text": "Shop Søvnig",
+        "button_1_text": "Shop Somira",
         "button_1_link": "#shop",
         "button_2_text": "Se alle produkter",
         "button_2_link": "#shop"
@@ -25,7 +25,7 @@
       "type": "intro",
       "settings": {
         "heading": "Små ting kan gøre en stor forskel for din aften.",
-        "text": "<p>Fra sovemasker og næsestrips til puder og andre favoritter. Søvnig samler produkter, der gør det nemmere at skabe din egen gode aftenrutine.</p>"
+        "text": "<p>Fra sovemasker og næsestrips til silkeprodukter og andre favoritter. Somira samler produkter, der gør det nemmere at skabe din egen gode aftenrutine.</p>"
       }
     },
     "featured_products": {
@@ -35,7 +35,7 @@
           "type": "product",
           "settings": {
             "product": "sovnig-puden",
-            "badge_text": "Søvnig favorit",
+            "badge_text": "Somira favorit",
             "title_override": "",
             "description_override": ""
           }
@@ -75,7 +75,7 @@
         "p4"
       ],
       "settings": {
-        "heading": "Søvnig-udvalget",
+        "heading": "Somira-udvalget",
         "subheading": "Alt til en bedre nat og en god aftenrutine."
       }
     },
@@ -85,7 +85,7 @@
         "image": "shopify://shop_images/editorial.jpg",
         "heading": "Din aftenrutine\nstarter her.",
         "link_text": "Se vores tilgang",
-        "link_url": "#om-soevnig"
+        "link_url": "#om-somira"
       }
     },
     "principles": {
@@ -156,10 +156,10 @@
       ],
       "settings": {
         "product": "sovnig-puden",
-        "eyebrow": "Søvnig Puden",
+        "eyebrow": "Somira Puden",
         "heading": "Mød puden, der gør sengen svær at forlade.",
         "text": "Blød, hvor du vil have den. Support, hvor du har brug for den. Designet til at give dig følelsen af en god hotelseng, hjemme hos dig selv.",
-        "button_text": "Se Søvnig Puden"
+        "button_text": "Se Somira Puden"
       }
     },
     "reviews": {
@@ -203,19 +203,19 @@
         "b1": {
           "type": "item",
           "settings": {
-            "text": "Søvnig Puden"
+            "text": "Somira Puden"
           }
         },
         "b2": {
           "type": "item",
           "settings": {
-            "text": "Søvnig Sovemasken"
+            "text": "Somira Sovemasken"
           }
         },
         "b3": {
           "type": "item",
           "settings": {
-            "text": "Søvnig Næsestrips"
+            "text": "Somira Næsestrips"
           }
         }
       },

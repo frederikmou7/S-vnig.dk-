@@ -1,6 +1,6 @@
 {
   "current": {
-    "logo_text": "SØVNIG",
+    "logo_text": "SOMIRA",
     "logo_suffix": ".dk",
     "logo_width": 140,
     "color_warm_white": "#FAF7F1",
@@ -15,11 +15,11 @@
     "free_shipping_threshold": 499,
     "cart_show_shipping_bar": true,
     "footer_tagline": "Alt til en bedre nat.",
-    "footer_bottom_text": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+    "footer_bottom_text": "<p>© 2026 Somira. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
   },
   "presets": {
-    "Søvnig": {
-      "logo_text": "SØVNIG",
+    "Somira": {
+      "logo_text": "SOMIRA",
       "logo_suffix": ".dk",
       "logo_width": 140,
       "color_warm_white": "#FAF7F1",
@@ -34,7 +34,7 @@
       "free_shipping_threshold": 499,
       "cart_show_shipping_bar": true,
       "footer_tagline": "Alt til en bedre nat.",
-      "footer_bottom_text": "<p>© 2026 Søvnig. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
+      "footer_bottom_text": "<p>© 2026 Somira. Prototype til konceptdemonstration — produkter, materialer og anmeldelser vist på siden er placeholders og ikke endelige specifikationer.</p>"
     }
   }
 }

@@ -16,7 +16,7 @@
 
 <!--
   ============================================================
-  SØVNIG — Shopify Online Store 2.0 theme
+  SOMIRA — Shopify Online Store 2.0 theme
   Konverteret fra den statiske design-prototype i /reference.
   Se README.md for arkitektur og opsætning.
   ============================================================
@@ -43,8 +43,8 @@
 </style>
 
 <script>
-  window.Sovnig = window.Sovnig || {};
-  window.Sovnig.routes = {
+  window.Somira = window.Somira || {};
+  window.Somira.routes = {
     cartUrl: {{ routes.cart_url | json }},
     cartAddUrl: {{ routes.cart_add_url | json }},
     cartChangeUrl: {{ routes.cart_change_url | json }},
@@ -52,14 +52,14 @@
     predictiveSearchUrl: {{ routes.predictive_search_url | json }},
     searchUrl: {{ routes.search_url | json }}
   };
-  window.Sovnig.strings = {
+  window.Somira.strings = {
     addedTemplate: {{ 'general.cart.added' | t: title: '%%TITLE%%' | json }},
     error: {{ 'general.cart.error' | t | json }},
     noResultsTemplate: {{ 'general.search.no_results_html' | t: terms: '%%TERMS%%' | json }},
     soldOut: {{ 'products.product.sold_out' | t | json }},
     addToCart: {{ 'products.product.add_to_cart' | t | json }}
   };
-  window.Sovnig.moneyFormat = {{ shop.money_format | json }};
+  window.Somira.moneyFormat = {{ shop.money_format | json }};
 </script>
 <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>

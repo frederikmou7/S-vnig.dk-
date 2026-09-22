@@ -1,11 +1,11 @@
 /* ==========================================================================
-   SØVNIG — global.js
+   SOMIRA — global.js
    Delt UI-adfærd: header, mobilmenu, søgeoverlay, kurv-drawer (åbn/luk),
    accordion, scroll-reveal, toast og fokushåndtering.
    Kurvens DATA (add/update/remove) håndteres af assets/cart.js.
    ========================================================================== */
 
-window.Sovnig = window.Sovnig || {};
+window.Somira = window.Somira || {};
 
 (function () {
   'use strict';
@@ -23,7 +23,7 @@ window.Sovnig = window.Sovnig || {};
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toastEl.classList.remove('is-visible'), 2800);
   }
-  window.Sovnig.toast = showToast;
+  window.Somira.toast = showToast;
 
   /* ---------------------------- Fokus / scroll-lås ---------------------------- */
   let lastFocused = null;
@@ -49,11 +49,11 @@ window.Sovnig = window.Sovnig || {};
   function unlockScrollIfNoneOpen() {
     if (!anyOverlayOpen()) document.body.classList.remove('no-scroll');
   }
-  window.Sovnig.lockScroll = lockScroll;
-  window.Sovnig.unlockScrollIfNoneOpen = unlockScrollIfNoneOpen;
-  window.Sovnig.trapFocus = trapFocus;
-  window.Sovnig.setLastFocused = (el) => { lastFocused = el; };
-  window.Sovnig.restoreFocus = () => { if (lastFocused) lastFocused.focus(); };
+  window.Somira.lockScroll = lockScroll;
+  window.Somira.unlockScrollIfNoneOpen = unlockScrollIfNoneOpen;
+  window.Somira.trapFocus = trapFocus;
+  window.Somira.setLastFocused = (el) => { lastFocused = el; };
+  window.Somira.restoreFocus = () => { if (lastFocused) lastFocused.focus(); };
 
   /* ---------------------------- Header scroll-adfærd ---------------------------- */
   const header = qs('#siteHeader');
@@ -86,10 +86,10 @@ window.Sovnig = window.Sovnig || {};
     mobileNav.setAttribute('aria-hidden', 'true');
     qs('#hamburgerBtn').setAttribute('aria-expanded', 'false');
     unlockScrollIfNoneOpen();
-    window.Sovnig.restoreFocus();
+    window.Somira.restoreFocus();
   }
-  window.Sovnig.openMobileNav = openMobileNav;
-  window.Sovnig.closeMobileNav = closeMobileNav;
+  window.Somira.openMobileNav = openMobileNav;
+  window.Somira.closeMobileNav = closeMobileNav;
 
   if (mobileNav) {
     qs('#hamburgerBtn').addEventListener('click', openMobileNav);
@@ -99,7 +99,7 @@ window.Sovnig = window.Sovnig || {};
     qsa('.mobile-nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
     const mobileSearchBtn = qs('#mobileSearchBtn');
     if (mobileSearchBtn) {
-      mobileSearchBtn.addEventListener('click', () => { closeMobileNav(); setTimeout(() => window.Sovnig.openSearch(), 300); });
+      mobileSearchBtn.addEventListener('click', () => { closeMobileNav(); setTimeout(() => window.Somira.openSearch(), 300); });
     }
   }
 
@@ -120,10 +120,10 @@ window.Sovnig = window.Sovnig || {};
     searchOverlay.classList.remove('is-open');
     searchOverlay.setAttribute('aria-hidden', 'true');
     unlockScrollIfNoneOpen();
-    window.Sovnig.restoreFocus();
+    window.Somira.restoreFocus();
   }
-  window.Sovnig.openSearch = openSearch;
-  window.Sovnig.closeSearch = closeSearch;
+  window.Somira.openSearch = openSearch;
+  window.Somira.closeSearch = closeSearch;
 
   if (searchOverlay) {
     qs('#searchOpenBtn').addEventListener('click', openSearch);
@@ -151,10 +151,10 @@ window.Sovnig = window.Sovnig || {};
     cartOverlay.classList.remove('is-open');
     cartDrawer.setAttribute('aria-hidden', 'true');
     unlockScrollIfNoneOpen();
-    window.Sovnig.restoreFocus();
+    window.Somira.restoreFocus();
   }
-  window.Sovnig.openCart = openCart;
-  window.Sovnig.closeCart = closeCart;
+  window.Somira.openCart = openCart;
+  window.Somira.closeCart = closeCart;
 
   if (cartDrawer) {
     qs('#cartOpenBtn').addEventListener('click', openCart);
@@ -203,7 +203,7 @@ window.Sovnig = window.Sovnig || {};
       targets.forEach(el => el.classList.add('is-visible'));
     }
   }
-  window.Sovnig.observeReveals = observeReveals;
+  window.Somira.observeReveals = observeReveals;
   observeReveals();
 
   document.addEventListener('DOMContentLoaded', observeReveals);

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SØVNIG — cart.js
+   SOMIRA — cart.js
    Rigtig Shopify AJAX-kurv. Ingen localStorage / demo-data.
    Håndterer: quick-add (produktkort, sæt-promo), samt quantity/remove
    inde i kurv-draweren. /cart-siden bruger native formular-submit i
@@ -10,8 +10,8 @@
   'use strict';
 
   const qs = (sel, ctx) => (ctx || document).querySelector(sel);
-  const routes = (window.Sovnig && window.Sovnig.routes) || {};
-  const strings = (window.Sovnig && window.Sovnig.strings) || {};
+  const routes = (window.Somira && window.Somira.routes) || {};
+  const strings = (window.Somira && window.Somira.strings) || {};
 
   const cartDrawer = qs('#cartDrawer');
   const cartDrawerInner = qs('#cartDrawerInner');
@@ -44,9 +44,9 @@
   }
 
   function showAddedToast(title) {
-    if (!window.Sovnig || !window.Sovnig.toast) return;
+    if (!window.Somira || !window.Somira.toast) return;
     const template = strings.addedTemplate || '%%TITLE%% er lagt i kurven.';
-    window.Sovnig.toast(template.replace('%%TITLE%%', title));
+    window.Somira.toast(template.replace('%%TITLE%%', title));
   }
 
   async function getCartState() {
@@ -70,15 +70,15 @@
       updateBadge(cartState.item_count);
       await refreshCartDrawer();
       showAddedToast(title);
-      if (window.Sovnig && window.Sovnig.openCart) window.Sovnig.openCart();
+      if (window.Somira && window.Somira.openCart) window.Somira.openCart();
     } catch (err) {
-      if (window.Sovnig && window.Sovnig.toast) window.Sovnig.toast(strings.error || 'Der opstod en fejl. Prøv igen.');
+      if (window.Somira && window.Somira.toast) window.Somira.toast(strings.error || 'Der opstod en fejl. Prøv igen.');
     } finally {
       setBusy(false);
     }
   }
-  window.Sovnig = window.Sovnig || {};
-  window.Sovnig.addToCart = addToCart;
+  window.Somira = window.Somira || {};
+  window.Somira.addToCart = addToCart;
 
   /* ---------------------------- Ret antal / fjern linje (kun i drawer) ---------------------------- */
   async function changeLine(key, quantity) {
@@ -93,7 +93,7 @@
       updateBadge(cartState.item_count);
       await refreshCartDrawer();
     } catch (err) {
-      if (window.Sovnig && window.Sovnig.toast) window.Sovnig.toast(strings.error || 'Der opstod en fejl. Prøv igen.');
+      if (window.Somira && window.Somira.toast) window.Somira.toast(strings.error || 'Der opstod en fejl. Prøv igen.');
     } finally {
       setBusy(false);
     }
