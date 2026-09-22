@@ -106,7 +106,7 @@ Somira skal IKKE ligne:
 
 # 4. PRODUKTSTRATEGI
 
-Somira starter småt.
+Somira er en dropshipping-forretning i opstartsfasen. Produkterne kommer fra udvalgte leverandører i EU — ikke fra egen produktion. Det kan ændre sig senere, men er udgangspunktet for alt herunder, indtil andet er besluttet.
 
 Brandet skal ikke kun handle om dyre produkter.
 
@@ -119,9 +119,11 @@ Ca. 99–249 kr.
 Eksempler:
 
 - næsestrips
-- sovemasker
 - ørepropper
-- andre små sleep accessories
+- duftpose med lavendel
+- silke scrunchie
+
+Næsestrips og ørepropper må **kun** sælges under det navngivne, CE-mærkede mærke, de allerede har (se punkt 16 og 17) — aldrig under navnet Somira.
 
 ## Bundles
 
@@ -129,18 +131,26 @@ Ca. 349–599 kr.
 
 Eksempel:
 
-- Somira Natkit
+- Rejsesæt (fx sovemaske + scrunchie + duftpose)
 
-## Hero products
+Bland ikke medicinsk udstyr eller høreværn ind i et sæt. Det gør Somira til juridisk fabrikant af hele sættet, ikke kun af det enkelte produkt.
 
-Ca. 699–999+ kr.
+## Silke-serien
+
+Ca. 250–600 kr.
 
 Eksempler:
 
-- Somira Puden
-- senere dyner
-- sengetøj
-- større sleep products
+- Silke Sovemaske
+- Silke Pudebetræk
+
+Sourcet hos en leverandør, der tilbyder white-label/dropshipping (pr. nu under afklaring: Moonsilk, Estland). Disse produkter må gerne bære Somira-navnet, når leverandøren tillader det.
+
+## Hero products
+
+Endnu ikke afklaret.
+
+Et større, dyrere hovedprodukt (fx en pude) har ikke en leverandør endnu og er ikke en del af det aktuelle sortiment. Tilføj det først, når en leverandør og en reel pris er på plads.
 
 Forretningsidéen er, at en kunde kan opdage Somira gennem et mindre produkt og senere købe dyrere produkter.
 
@@ -152,17 +162,16 @@ Hjemmesiden skal understøtte denne kunderejse.
 
 Brandet skal kunne vokse til blandt andet:
 
-- puder
-- sovemasker
+- silke-tilbehør (pudebetræk, sovemasker, scrunchies)
 - næsestrips
 - ørepropper
-- sleep accessories
+- duftprodukter til aftenrutiner
+- puder
 - sengetøj
 - dyner
 - cooling products
 - mørklægningsprodukter
 - travel sleep products
-- produkter til aftenrutiner
 
 Undgå at bygge theme-arkitekturen så snævert, at den kun fungerer til nuværende produkter.
 
